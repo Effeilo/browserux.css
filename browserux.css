@@ -1,0 +1,811 @@
+/*! browserux.css 1.0 | 2025 MIT Licence | github.com/Effeilo/browserux.css */
+
+/* ----------------------------------------------------------------------------
+
+ ### Variables
+
+---------------------------------------------------------------------------- */
+
+:root {
+  /* Global colors */
+  --ui-page-bg: #eaeaea;
+  --ui-page-color: #121212;
+  --ui-color-primary: #f05e0e;
+  --ui-color-secondary: #0e93f0;
+  --ui-transparent: transparent;
+
+  /* Form validation colors */
+  --ui-valid-border-color: #29b94c;
+  --ui-valid-bg-color: #f0fff5;
+  --ui-invalid-border-color: #dc303e;
+  --ui-invalid-bg-color: #fff0f0;
+  --ui-placeholder-color: #aaa;
+  --ui-invalid-placeholder-color: #dc303e;
+  
+  /* Progress bar colors */
+  --ui-progress-bar-bg: #efefef;
+  --ui-progress-value-bg: #29b94c;
+
+  /* Text selection */
+  --ui-selection-bg: var(--ui-page-color);
+  --ui-selection-color: var(--ui-page-bg);
+  --ui-selection-text-shadow: none;
+
+  /* Scrollbar */
+  --ui-scrollbar: var(--ui-page-bg);
+  --ui-scrollbar-track: #ddecf6;
+  --ui-scrollbar-thumb: var(--ui-color-secondary);
+  --ui-scrollbar-thumb-hover: var(--ui-color-primary);
+  --ui-scrollbar-vertical-width: 10px;
+  --ui-scrollbar-horizontal-height: 10px;
+
+  /* Typography */
+  --ui-typo-font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --ui-typo-mono-font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  --ui-typo-font-size: 1.6rem;
+  --ui-typo-line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------------------
+
+ ### Browser User Preferences
+
+---------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------
+ ## Theme Preferences
+---------------------------------------------------------------------------- */
+
+/** 
+ * Smooth transition between Dark Mode and Light Mode
+ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Global colors */
+    --ui-page-bg: #eaeaea;
+    --ui-page-color: #121212;
+    --ui-color-primary: #f05e0e;
+    --ui-color-secondary: #0e93f0;
+
+     /* Form validation colors */
+    --ui-valid-border-color: #28a745;
+    --ui-valid-bg-color: #f0fff5;
+    --ui-invalid-border-color: #dc3545;
+    --ui-invalid-bg-color: #fff0f0;
+    --ui-placeholder-color: #aaa;
+    --ui-invalid-placeholder-color: #dc3545;
+
+    /* Progress bar colors */
+    --ui-progress-bar-bg: #eee;
+    --ui-progress-value-bg: #4caf50;
+  
+    /* Scrollbar */
+    --ui-scrollbar-track: #ddecf6;
+  }
+}
+
+/** 
+ * Smooth transition between Dark Mode and Light Mode
+   @best practice for UX
+ */
+
+body {
+  transition: background-color 0.3s, color 0.3s; /* 1 */
+}
+
+/* ----------------------------------------------------------------------------
+ ## Animations Preferences
+---------------------------------------------------------------------------- */
+
+/**
+ * If the user has not requested the system to minimize the amount of animation or movement.
+   @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+ * 1. Defines a smooth scroll effect to the scrolling behavior for a scrolling box, 
+      when scrolling happens due to navigation or CSSOM scrolling APIs.
+      @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
+ */
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth; /* 2 */
+  }
+}
+
+  /**
+    * When the user has requested reduced motion (for accessibility reasons).
+      @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+    * 1. Force animations to have zero duration to avoid triggering motion sickness or distraction.
+    * 2. Force animations to stop after a single iteration to prevent infinite animations from continuing.
+    * 3. Disable smooth scrolling, falling back to instant jumps between anchors and scroll events.
+    * 4. Force transitions to have zero duration to eliminate motion during state changes.
+  */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0s !important; /* 1 */
+    animation-iteration-count: 1 !important; /* 2 */
+    scroll-behavior: auto !important; /* 3 */
+    transition-duration: 0s !important; /* 4 */
+  }
+}
+
+/* ----------------------------------------------------------------------------
+
+ ### Browser UI Theme
+
+---------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------
+ ## Text Selection
+---------------------------------------------------------------------------- */
+
+/**
+ * Customizes text selection background and text color.
+ */
+
+::selection {
+  background: var(--ui-selection-bg);
+  color: var(--ui-selection-color);
+  text-shadow: var(--ui-selection-text-shadow);
+}
+
+/* ----------------------------------------------------------------------------
+ ## Scrollbar
+---------------------------------------------------------------------------- */
+
+/**
+ * Styles the native scrollbar for WebKit/Blink browsers (Chrome, Edge Chromium, Safari).
+ */
+
+::-webkit-scrollbar {
+	background: var(--ui-scrollbar);
+	height: var(--ui-scrollbar-horizontal-height);
+	width: var(--ui-scrollbar-vertical-width);
+}
+
+/**
+ * Hides scrollbar buttons for a cleaner look.
+ */
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/**
+ * Prevents a background color from appearing in the scrollbar corner 
+ * (the intersection between horizontal and vertical scrollbars).
+ */
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+ 
+/**
+ * Styles the scrollbar track and thumb.
+ */
+
+::-webkit-scrollbar-track {
+	background-color: var(--ui-scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--ui-scrollbar-thumb);
+}
+	
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--ui-scrollbar-thumb-hover);
+}
+
+/**
+ * Enables custom scrollbar styling in Firefox.
+ */
+
+html {
+  scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track);
+  scrollbar-width: thin;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Form components
+---------------------------------------------------------------------------- */
+
+/**
+ * Customizes placeholder text color.
+ */
+
+::placeholder {
+  color: var(--ui-placeholder-color);
+}
+
+/**
+ * Applies the primary color as accent for form elements.
+ */
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+meter,
+select {
+  accent-color: var(--ui-color-primary);
+}
+
+progress {
+  accent-color: var(--ui-progress-value-bg);
+}
+
+/**
+ * Styles the slider thumb for WebKit and Firefox.
+ */
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+  background: var(--ui-color-primary);
+  border: none;
+}
+
+/**
+ * Styles form fields depending on validation state.
+ */
+
+input:valid, 
+textarea:valid, 
+select:valid {
+  background-color: var(--ui-valid-bg-color);
+  border-color: var(--ui-valid-border-color); 
+}
+
+input:invalid, 
+textarea:invalid, 
+select:invalid {
+  background-color: var(--ui-invalid-bg-color);
+  border-color:  var(--ui-invalid-border-color);
+}
+
+input:invalid::placeholder, 
+textarea:invalid::placeholder {
+  color: var(--ui-invalid-placeholder-color);
+}
+
+/**
+ * Styles the native progress bar appearance for WebKit and Firefox.
+ */
+
+progress::-webkit-progress-bar {
+  background-color: var(--ui-progress-bar-bg);
+  border-radius: 8px;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--ui-progress-value-bg);
+  border-radius: 8px;
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--ui-progress-bar-bg);
+}
+
+/* ----------------------------------------------------------------------------
+ ## Collapsible interactive components
+---------------------------------------------------------------------------- */
+
+/**
+ * Applies the primary color as accent for collapsible interactive components.
+ */
+
+details,
+summary {
+  accent-color: var(--ui-color-primary);
+}
+
+/* ----------------------------------------------------------------------------
+ ## Focus & Accessibility
+---------------------------------------------------------------------------- */
+
+/**
+ * Removes default focus outline on all elements.
+ */
+
+:focus {
+  outline: none;
+}
+
+/**
+ * Displays a visible focus outline only for keyboard and assistive technology users.
+ * Improves accessibility without affecting mouse/touch interactions.
+ */
+
+:focus-visible {
+  outline: 2px solid var(--ui-color-primary);
+  outline-offset: 2px;
+}
+
+/* ----------------------------------------------------------------------------
+
+ ### Browser Default styles
+
+---------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------
+ ## Spacings reset
+---------------------------------------------------------------------------- */
+
+/**
+ * Reset margins and paddings.
+ */
+
+ *,
+ *::before,
+ *::after {
+   margin: 0;
+   padding: 0;
+ }
+
+/* ----------------------------------------------------------------------------
+ ## Box model
+---------------------------------------------------------------------------- */
+
+/**
+ * Inherits the `box-sizing` property for all elements and pseudo-elements.
+ * @for All modern browsers.
+ * @see https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+
+*,
+::before,
+::after {
+  box-sizing: inherit; 
+}
+
+/**
+ * Sets `box-sizing: border-box` globally by assigning it to the root element.
+ * This ensures predictable sizing behavior across the entire document.
+ */
+
+html {
+  box-sizing: border-box; 
+}
+
+/* ----------------------------------------------------------------------------
+ ## The root element
+---------------------------------------------------------------------------- */
+
+/**
+ * 1. Improve consistency of default fonts in all browsers.
+ *    @see https://github.com/sindresorhus/modern-normalize/issues/3
+ * 2. Relative value unit refers to the size of the parent element.
+ *    Browsers' font size default is 16px. For a 1em/10px report,
+ *    we divide the size by the default size: 10/16 x 100 = 62.5%.
+ * 3. Ensure the root element covers the full viewport height for consistent layouts.
+ * 4. Force scrollbars to always be visible to prevent awkward jumps when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ *    @see https://css-tricks.com/snippets/css/force-vertical-scrollbar/
+ * 5. Fonts on macOS will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ *    @for macOS.
+ * 6. Remove the highlighting effect when "tapped" action on webkit browsers.
+ *    @for Androids.
+ * 7. Use a more readable tab size.
+ * 8. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ *    @for iOS Safari 5.1+.
+ */
+
+html {
+  font-family: var(--ui-typo-font-family); /* 1 */
+  font-size: 62.5%; /* 2 */
+  min-height: 100%; /* 3 */
+  overflow-y: scroll; /* 4 */
+  -moz-osx-font-smoothing: grayscale; /* 5 */
+  -webkit-font-smoothing: antialiased; /* 5 */
+  -webkit-tap-highlight-color: transparent; /* 6 */
+  tab-size: 4; /* 7 */
+  -moz-tab-size: 4; /* 7 */
+  text-size-adjust: 100%; /* 8 */
+  -webkit-text-size-adjust: 100%; /* 8 */
+}
+
+/* ----------------------------------------------------------------------------
+ ## Sections
+---------------------------------------------------------------------------- */
+
+/**
+ * 1. Initializes page background color
+ * 2. Initializes page color, font size and line height using CSS variables.
+ * 3. Ensures the body element always fills at least the full viewport height,
+ *    providing better structure for layouts and preventing collapsing pages.
+ */
+ 
+body {
+  background: var(--ui-page-bg); /* 1 */ 
+  color: var(--ui-page-color); /* 2 */ 
+  font-size: var(--ui-typo-font-size); /* 2 */
+  line-height: var(--ui-typo-line-height); /* 2 */
+  min-height: 100%; /* 3 */
+}
+
+/* ----------------------------------------------------------------------------
+ ## Grouping content
+---------------------------------------------------------------------------- */
+
+/**
+ * Prevents overflow from blockquote, pre, and code blocks.
+ */
+
+blockquote,
+pre {
+  max-width: 100%;
+}
+
+/**
+ * Applies a consistent monospace font stack across browsers.
+ * @see https://github.com/sindresorhus/modern-normalize/issues/3
+ */
+ 
+pre {
+  font-family: var(--ui-typo-mono-font-family);
+}
+
+/**
+ * Removes default list item markers from ordered and unordered lists,
+ * allowing for full custom styling of list content.
+ */
+
+ol, 
+ul {
+  list-style: none;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Text-level semantics
+---------------------------------------------------------------------------- */
+
+/**
+ * 1. Removes text-decoration and outline on links.
+ * 2. Improves underline rendering by skipping descenders.
+ * 3. Removes 300ms delay on clickable elements on mobile.
+ *    @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
+ */
+
+a {
+  outline: 0; /* 1 */
+  text-decoration: none; /* 1 */
+  text-decoration-skip-ink: auto; /* 2 */
+  touch-action: manipulation; /* 3 */
+}
+
+/**
+ * 1. Shows help cursor for elements providing additional info on hover.
+ * 2. Applies correct underline decoration for better readability.
+ */
+
+abbr[title],
+dfn[title] {
+  cursor: help; /* 1 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Ensures correct font weight on bold text across browsers.
+ */
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Prevents overflow from blockquote, pre, and code blocks.
+ * 2. Displays code content with preserved white space and line breaks.
+ */
+ 
+code {
+  max-width: 100%; /* 1 */
+  white-space: pre-wrap; /* 2 */
+}
+
+/**
+ * Applies a consistent monospace font stack across browsers.
+ * @see https://github.com/sindresorhus/modern-normalize/issues/3
+ */
+ 
+code, 
+kbd, 
+samp {
+  font-family: var(--ui-typo-mono-font-family);
+}
+
+/**
+ * Ensures correct sizing for small text.
+ */
+
+small {
+	font-size: 80%;
+}
+
+/**
+ * Fixes sub and sup rendering to prevent line-height issues.
+ */
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Embedded content
+---------------------------------------------------------------------------- */
+
+/**
+ * Removes 300ms delay on area elements on mobile.
+ * @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
+ */
+
+area {
+  touch-action: manipulation;
+}
+
+/**
+ * 1. Preserves aspect ratio for images.
+ * 2. Ensures media elements do not overflow their container.
+ */
+
+img, 
+svg, 
+video {
+  height: auto; /* 1 */
+  max-width: 100%; /* 2 */
+}
+
+/**
+ * Prevents selection highlight when dragging images.
+ * Not all browsers apply ::selection on images consistently.
+   @see https://stackoverflow.com/questions/6816080/how-to-disable-highlight-on-a-image
+ */
+
+img::selection {
+  background-color: var(--ui-transparent);
+}
+
+/**
+ * Ensures SVG fills match the text color for easier theming.
+ */
+
+svg {
+	fill: currentColor;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Tabular data
+---------------------------------------------------------------------------- */
+
+/**
+ * 1. Correct table border color inheritance in Chrome and Safari.
+ *    @see https://bugs.chromium.org/p/chromium/issues/detail?id=935729
+ *    @see https://bugs.webkit.org/show_bug.cgi?id=195016
+ * 2. Remove text indentation from table contents in Chrome and Safari.
+ *    @see https://bugs.chromium.org/p/chromium/issues/detail?id=999088
+ *    @see https://bugs.webkit.org/show_bug.cgi?id=201297
+ */
+
+table {
+  border-color: inherit; /* 1 */
+	text-indent: 0; /* 2 */    
+}
+
+/**
+ * Prevent tables and table cells from overflowing their container,
+ * maintaining layout integrity on small screens.
+ */
+
+table, 
+td {
+  max-width: 100%;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Forms
+---------------------------------------------------------------------------- */
+
+/**
+ * 1. Resets the default appearance of buttons.
+ * 2. Prevents accidental text selection on double-click.
+ */
+
+button {
+  appearance: none; /* 1 */
+  border: none; /* 1 */
+  background: none; /* 1 */
+  user-select: none; /* 2 */
+}
+
+/**
+ * Removes 300ms tap delay on clickable form elements on mobile.
+ * @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
+ */
+
+button, 
+input, 
+label, 
+select, 
+textarea {
+  touch-action: manipulation;
+}
+
+/**
+ * Reset font styles to inherit in all form controls.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+/**
+ * Remove the text-transform inheritance in Edge and Firefox.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * Apply pointer cursor on clickable form elements.
+ */
+
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+label[for],
+select {
+  cursor: pointer;
+}
+
+/**
+ * Correct clickable types styling on iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: button;
+	-webkit-appearance: button;
+}
+
+/**
+ * Prevent inputs and textareas from overflowing their container.
+ */
+
+input, 
+textarea {
+  max-width: 100%;
+}
+
+/**
+ * Ensure text can be selected in form inputs.
+ */
+
+input, 
+select,
+textarea {
+  user-select: text;
+}
+
+/**
+ * 1. Correct the appearance of search fields in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  appearance: textfield; /* 1 */
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}
+
+
+/**
+ * Remove the inner decoration of search fields on Webkit browsers.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Correct vertical alignment of progress elements.
+ */
+
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Allow only vertical resizing of textareas for better UX.
+ * @for Firefox 5+, Chrome 4+, Safari 4+, Opera 12.1+.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/**
+ * Style the upload button on file inputs correctly on Safari/iOS.
+ */
+
+::-webkit-file-upload-button {
+  appearance: button;
+	-webkit-appearance: button; 
+	font: inherit;
+}
+
+/**
+ * Corrects the vertical alignment of spin buttons in number inputs on Safari.
+ */
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * Remove inner border and padding on focus in Firefox.
+ */
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Remove additional invalid styles in Firefox.
+ * @see https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+ */
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Interactive elements
+---------------------------------------------------------------------------- */
+
+/**
+ * Ensures the <summary> element is correctly rendered as a list item.
+ * This improves accessibility and ensures consistent behavior inside <details>.
+ */
+
+summary {
+  display: list-item;
+}
+
+/**
+ * Prevents text selection on interactive elements that behave like buttons,
+ * improving the user experience on touch devices and during rapid clicks.
+ */
+
+[role="button"],
+details[open] summary,
+summary {
+  user-select: none;
+}
