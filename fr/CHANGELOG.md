@@ -17,7 +17,7 @@ et ce projet suit les recommandations de versionnage [SemVer](https://semver.org
 
 <br>
 
-## [1.0] – 2025-04-30
+## [1.0.1] – 05-05-2025
 
 ### ✨ Ajout
 

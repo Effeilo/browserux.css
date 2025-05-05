@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning (SemVer)](https://semver.org/).
 
 <br>
 
-## [1.0] – 2025-04-30
+## [1.0.1] – 2025-05-05
 
 ### ✨ Added
 - Initial stable release of **`browserux.css`**:
