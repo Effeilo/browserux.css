@@ -35,10 +35,9 @@ et ce projet suit les recommandations de versionnage [SemVer](https://semver.org
 
 ### 📘 Presentation
 
-- `README.md` (anglais)
-- `fr/README.md` (français)
-- Navigation multilingue (EN / FR)
-- Présentation claire des objectifs, de l’installation, de la philosophie et de la structure des fichiers
+- Présentation claire des objectifs, de l’installation, de la philosophie et de la structure des fichiers : 
+  - `README.md` (anglais)
+  - `fr/README.md` (français)
 
 <br>
 
