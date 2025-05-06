@@ -15,6 +15,18 @@ and this project adheres to [Semantic Versioning (SemVer)](https://semver.org/).
 
 <br>
 
+## [1.0.2 – Upcoming]
+
+### 🛠️ In Progress
+- Fixed indentation in `browserux.css`
+- Other improvements planned based on feedback from version 1.0.1
+
+<br>
+
+---
+
+<br>
+
 ## [1.0.1] – 2025-05-05
 
 ### ✨ Added
@@ -27,7 +39,6 @@ and this project adheres to [Semantic Versioning (SemVer)](https://semver.org/).
   - ⚙️ Normalization (typography, native elements, forms…)
   - 🧩 Ergonomics (smooth scroll, tap, visible scrollbars…)
   - ♿ Accessibility (dark mode, focus-visible, accent-color…)
-
 
 <br>
 
@@ -44,6 +55,17 @@ and this project adheres to [Semantic Versioning (SemVer)](https://semver.org/).
 - Full documentation:
   - `en/DOC.md` (English)
   - `fr/DOC.md` (French)
+
+<br>
+
+---
+
+<br>
+
+## 📊 Version History
+
+- [Compare `1.0.1` ↔ `1.0.2`](https://github.com/Effeilo/browserux.css/compare/1.0.1...HEAD)
+- [View `1.0.1`](https://github.com/Effeilo/browserux.css/releases/tag/1.0.1)
 
 <br>
 
