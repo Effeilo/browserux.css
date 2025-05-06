@@ -112,14 +112,14 @@ body {
   }
 }
 
-  /**
-    * When the user has requested reduced motion (for accessibility reasons).
-      @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
-    * 1. Force animations to have zero duration to avoid triggering motion sickness or distraction.
-    * 2. Force animations to stop after a single iteration to prevent infinite animations from continuing.
-    * 3. Disable smooth scrolling, falling back to instant jumps between anchors and scroll events.
-    * 4. Force transitions to have zero duration to eliminate motion during state changes.
-  */
+/**
+  * When the user has requested reduced motion (for accessibility reasons).
+    @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+  * 1. Force animations to have zero duration to avoid triggering motion sickness or distraction.
+  * 2. Force animations to stop after a single iteration to prevent infinite animations from continuing.
+  * 3. Disable smooth scrolling, falling back to instant jumps between anchors and scroll events.
+  * 4. Force transitions to have zero duration to eliminate motion during state changes.
+*/
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -336,12 +336,12 @@ summary {
  * Reset margins and paddings.
  */
 
- *,
- *::before,
- *::after {
-   margin: 0;
-   padding: 0;
- }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
 
 /* ----------------------------------------------------------------------------
  ## Box model
