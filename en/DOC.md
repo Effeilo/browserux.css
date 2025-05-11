@@ -4,7 +4,7 @@
   <img src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX"/>
 </div>
 
-# 📘 Documentation — `browserux.css`
+# 📘 Documentation of `browserux.css`
 
 Welcome to the `browserux.css` documentation.
 
@@ -287,7 +287,7 @@ Base variables used to configure font, text size, and global line height.
 
 ### 2. ⚙️ Browser User Preferences
 
-The `browserux.css` file takes into account certain system-level user preferences to improve ergonomics and accessibility — all without JavaScript.
+The `browserux.css` file takes into account certain system-level user preferences to improve ergonomics and accessibility, all without JavaScript.
 
 <br>
 
@@ -373,7 +373,7 @@ If the user hasn’t disabled animations, smooth scrolling is enabled across the
 
 <br>
 
-✅ These preferences are natively handled by CSS — no scripts needed — and contribute to a smooth, inclusive, and modern user experience.
+✅ These preferences are natively handled by CSS, no scripts needed, and contribute to a smooth, inclusive, and modern user experience.
 
 ---
 
@@ -381,7 +381,7 @@ If the user hasn’t disabled animations, smooth scrolling is enabled across the
 
 ### 3. 🧩 Browser Interface Theme
 
-The "Browser UI Theme" section of `browserux.css` customizes several native browser elements — such as text selection, scrollbars, form components, or collapsible elements — to improve visual consistency, usability, and accessibility.
+The "Browser UI Theme" section of `browserux.css` customizes several native browser elements, such as text selection, scrollbars, form components, or collapsible elements, to improve visual consistency, usability, and accessibility.
 
 <br>
 
@@ -634,7 +634,7 @@ It draws inspiration from modern resets (like normalize.css), while going furthe
 #### 🔧 Spacing Reset
 
 This section removes all default `margin` and `padding` applied by browsers to HTML elements.  
-This creates a clean, predictable base — essential for any custom stylesheet.
+This creates a clean, predictable base, essential for any custom stylesheet.
 
 ```css
 *,
@@ -794,7 +794,7 @@ text-size-adjust: 100%;
 #### 📑 Sections
 
 This section initializes the foundational styles of the page through the `body` element, which is considered a sectioning root in HTML.  
-It sets up the visual base: background, text color, typography, and ensures a full-page minimum height — useful for layouts.
+It sets up the visual base: background, text color, typography, and ensures a full-page minimum height, useful for layouts.
 
 ```css
 body {
@@ -1442,7 +1442,7 @@ summary {
 
 ## 🤝 V. Contributing to the Project
 
-Contributions are welcome! Whether you'd like to report a bug, suggest an improvement, add a new feature, or fix a typo — feel free to get involved.
+Contributions are welcome! Whether you'd like to report a bug, suggest an improvement, add a new feature, or fix a typo, feel free to get involved.
 
 ### 🛠️ Issues & Feedback
 
@@ -1478,7 +1478,7 @@ Contributions are welcome! Whether you'd like to report a bug, suggest an improv
 
 ## ⚖️ VI. License
 
-**MIT License** — Free to use, modify, and distribute.
+**MIT License**, Free to use, modify, and distribute.
 
 [Détails Licence MIT](./LICENCE.md)
 

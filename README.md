@@ -7,7 +7,7 @@
 # `browserux.css`
 
 **`browserux.css`** is a **minimal CSS foundation** focused on **user experience** and **accessibility**.
-Designed to **enhance native HTML** and **CSS behaviors**, it provides a **clean**, **modern baseline** that **improves usability across all devices** — before relying on utility classes, heavy frameworks, or JavaScript.
+Designed to **enhance native HTML** and **CSS behaviors**, it provides a **clean**, **modern baseline** that **improves usability across all devices**, before relying on utility classes, heavy frameworks, or JavaScript.
 
 - [Documentation](./en/DOC.md)
 - [Changelog](./en/CHANGELOG.md)
@@ -40,11 +40,11 @@ Designed to **enhance native HTML** and **CSS behaviors**, it provides a **clean
 
 ## ❓ Why `browserux.css`
 
-Most front-end projects start with a `reset.css` or `normalize.css`. However, despite their intentions — especially Normalize’s goal to preserve useful browser behaviors — we almost always end up adding our own tweaks: removing margins, setting `box-sizing: border-box`, improving typography, etc.
+Most front-end projects start with a `reset.css` or `normalize.css`. However, despite their intentions, especially Normalize’s goal to preserve useful browser behaviors, we almost always end up adding our own tweaks: removing margins, setting `box-sizing: border-box`, improving typography, etc.
 
 But the web has evolved. User experience has become a key concern, and modern browsers now offer native CSS capabilities that are often underused: customizable scrollbars, keyboard focus management, support for user preferences like dark mode or reduced motion…
 
-`browserux.css` goes beyond a simple reset. It provides a modern, lightweight foundation designed to improve usability, accessibility, and visual consistency of native browser elements — without JavaScript, without utility classes, and without bloat.
+`browserux.css` goes beyond a simple reset. It provides a modern, lightweight foundation designed to improve usability, accessibility, and visual consistency of native browser elements, without JavaScript, without utility classes, and without bloat.
 
 ---
 
@@ -122,7 +122,7 @@ A balanced integration of the four core principles, organized logically:
 
 ## ✨ Features
 
-`browserux.css` is a modern, lightweight, and 100% native (pure HTML/CSS) base stylesheet, designed to meet the needs of today’s front-end projects. It covers the essential foundations to ensure consistency, accessibility, and usability — from the very first byte.
+`browserux.css` is a modern, lightweight, and 100% native (pure HTML/CSS) base stylesheet, designed to meet the needs of today’s front-end projects. It covers the essential foundations to ensure consistency, accessibility, and usability, from the very first byte.
 
 ### 🔄 Reset
 
@@ -264,7 +264,7 @@ import 'browserux.css/browserux.css';
 
 ## 🤝 Contributing to the Project
 
-Contributions are welcome! Whether you want to report a bug, suggest an improvement, add a feature, or fix a typo — feel free to get involved.
+Contributions are welcome! Whether you want to report a bug, suggest an improvement, add a feature, or fix a typo, feel free to get involved.
 
 ### 🛠️ Issues & Feedback
 
@@ -313,7 +313,7 @@ Inspired by great practices from:
 
 ## ⚖️ License
 
-**MIT License** — Free to use, modify, and distribute.
+**MIT License**, Free to use, modify, and distribute.
 
 - [More details](./en/LICENSE.md)
 

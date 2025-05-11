@@ -4,7 +4,7 @@
   <img src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX"/>
 </div>
 
-# 📘 Documentation — `browserux.css`
+# 📘 Documentation de `browserux.css`
 
 Bienvenue sur la documentation de `browserux.css`.
 
@@ -290,7 +290,7 @@ Variables de base utilisées pour configurer la police, la taille de texte et l�
 
 ### 2. ⚙️ Préférences utilisateur du navigateur
 
-Le fichier `browserux.css` prend en compte certaines préférences système de l’utilisateur pour améliorer l’ergonomie et l’accessibilité — le tout sans JavaScript.
+Le fichier `browserux.css` prend en compte certaines préférences système de l’utilisateur pour améliorer l’ergonomie et l’accessibilité, le tout sans JavaScript.
 
 <br>
 
@@ -384,7 +384,7 @@ Si l’utilisateur n’a pas désactivé les animations, on active un défilemen
 
 ### 3. 🧩 Thème de l'interface du navigateur
 
-La section Browser UI Theme de `browserux.css` personnalise plusieurs éléments natifs du navigateur — tels que la sélection de texte, les barres de défilement, les composants de formulaire ou repliables — afin d'améliorer leur cohérence visuelle, leur ergonomie et leur accessibilité.
+La section Browser UI Theme de `browserux.css` personnalise plusieurs éléments natifs du navigateur, tels que la sélection de texte, les barres de défilement, les composants de formulaire ou repliables, afin d'améliorer leur cohérence visuelle, leur ergonomie et leur accessibilité.
 
 <br>
 
@@ -1465,7 +1465,7 @@ Les contributions sont les bienvenues ! Que vous souhaitiez signaler un bug, p
 
 ## ⚖️ VI. Licence
 
-**Licence MIT** — Libre d’utilisation, de modification et de distribution.
+**Licence MIT**, Libre d’utilisation, de modification et de distribution.
 
 - [Détails Licence MIT](./LICENCE.md)
 

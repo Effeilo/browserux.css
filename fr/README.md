@@ -7,7 +7,7 @@
 # `browserux.css`
 
 **`browserux.css`** est une **base CSS** minimaliste, centrée sur l’**expérience utilisateur** et l’**accessibilité**.
-Conçu pour renforcer les comportements natifs de HTML et CSS, il offre une base **moderne et cohérente**, qui améliore l’**ergonomie sur tous les appareils** — avant même d’avoir recours à des classes utilitaires, à des frameworks lourds ou à JavaScript.
+Conçu pour renforcer les comportements natifs de HTML et CSS, il offre une base **moderne et cohérente**, qui améliore l’**ergonomie sur tous les appareils**, avant même d’avoir recours à des classes utilitaires, à des frameworks lourds ou à JavaScript.
 
 - [Documentation](./DOC.md)
 - [Changelog](./CHANGELOG.md)
@@ -40,11 +40,11 @@ Conçu pour renforcer les comportements natifs de HTML et CSS, il offre une base
 
 ## ❓ Pourquoi `browserux.css`
 
-La plupart des projets front-end commencent avec un `reset.css` ou un `normalize.css`. Pourtant, malgré leurs intentions — notamment celle de Normalize, qui cherche à préserver les comportements utiles des navigateurs — on finit presque toujours par ajouter nos propres ajustements : suppression des marges, `box-sizing: border-box`, améliorations typographiques, etc.
+La plupart des projets front-end commencent avec un `reset.css` ou un `normalize.css`. Pourtant, malgré leurs intentions, notamment celle de Normalize, qui cherche à préserver les comportements utiles des navigateurs, on finit presque toujours par ajouter nos propres ajustements : suppression des marges, `box-sizing: border-box`, améliorations typographiques, etc.
 
 Mais le web a évolué. L’expérience utilisateur est devenue un critère central, et les navigateurs modernes offrent désormais des capacités CSS natives souvent sous-utilisées : scrollbars personnalisables, gestion du focus clavier, prise en charge des préférences utilisateur comme le mode sombre ou la réduction des animations…
 
-`browserux.css` va plus loin qu’un simple reset. Il propose une base moderne et légère, pensée pour améliorer l’ergonomie, l’accessibilité et la cohérence visuelle des éléments natifs du navigateur — sans JavaScript, sans classes utilitaires, et sans surcharge.
+`browserux.css` va plus loin qu’un simple reset. Il propose une base moderne et légère, pensée pour améliorer l’ergonomie, l’accessibilité et la cohérence visuelle des éléments natifs du navigateur, sans JavaScript, sans classes utilitaires, et sans surcharge.
 
 ---
 
@@ -122,7 +122,7 @@ Intégration équilibrée des 4 axes fondamentaux, organisée de manière logiqu
 
 ## ✨ Fonctionnalités
 
-`browserux.css` est une base CSS moderne, légère et 100 % native (HTML/CSS pur), conçue pour répondre aux besoins des projets front-end actuels. Elle couvre les fondations essentielles pour garantir cohérence, accessibilité et ergonomie — dès le premier octet.
+`browserux.css` est une base CSS moderne, légère et 100 % native (HTML/CSS pur), conçue pour répondre aux besoins des projets front-end actuels. Elle couvre les fondations essentielles pour garantir cohérence, accessibilité et ergonomie, dès le premier octet.
 
 ### 🔄 Reset
 
@@ -313,7 +313,7 @@ Inspiré des bonnes pratiques de :
 
 ## ⚖️ Licence
 
-**Licence MIT** — Libre d’utilisation, de modification et de distribution.
+**Licence MIT**, Libre d’utilisation, de modification et de distribution.
 
 - [Détails Licence MIT](./LICENCE.md)
 
