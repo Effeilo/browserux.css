@@ -1,0 +1,26 @@
+{
+    "name": "browserux.css",
+    "version": "1.0.2",
+    "description": "Minimal, accessible and ergonomic CSS base – A modern CSS foundation built on native HTML/CSS capabilities.",
+    "main": "browserux.css",
+    "files": [
+      "browserux.css",
+      "browserux.min.css"
+    ],
+    "keywords": [
+      "css",
+      "reset",
+      "normalization",
+      "accessibility",
+      "ux",
+      "starter",
+      "frontend",
+      "minimal"
+    ],
+    "author": "Effeilo",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Effeilo/browserux.css"
+    }
+  }
