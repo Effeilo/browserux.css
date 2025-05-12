@@ -57,31 +57,16 @@
 ---------------------------------------------------------------------------- */
 
 /** 
- * Smooth transition between Dark Mode and Light Mode
+ * Global colors for Dark Mode
  */
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* Global colors */
-    --ui-page-bg: #eaeaea;
-    --ui-page-color: #121212;
+    --ui-page-bg: #121212;
+    --ui-page-color: #eaeaea;
     --ui-color-primary: #f05e0e;
     --ui-color-secondary: #0e93f0;
-
-     /* Form validation colors */
-    --ui-valid-border-color: #28a745;
-    --ui-valid-bg-color: #f0fff5;
-    --ui-invalid-border-color: #dc3545;
-    --ui-invalid-bg-color: #fff0f0;
-    --ui-placeholder-color: #aaa;
-    --ui-invalid-placeholder-color: #dc3545;
-
-    /* Progress bar colors */
-    --ui-progress-bar-bg: #eee;
-    --ui-progress-value-bg: #4caf50;
-  
-    /* Scrollbar */
-    --ui-scrollbar-track: #ddecf6;
   }
 }
 
@@ -91,7 +76,7 @@
  */
 
 body {
-  transition: background-color 0.3s, color 0.3s; /* 1 */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* ----------------------------------------------------------------------------
@@ -101,14 +86,14 @@ body {
 /**
  * If the user has not requested the system to minimize the amount of animation or movement.
    @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
- * 1. Defines a smooth scroll effect to the scrolling behavior for a scrolling box, 
-      when scrolling happens due to navigation or CSSOM scrolling APIs.
-      @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
+ * Defines a smooth scroll effect to the scrolling behavior for a scrolling box, 
+   when scrolling happens due to navigation or CSSOM scrolling APIs.
+   @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
  */
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
-    scroll-behavior: smooth; /* 2 */
+    scroll-behavior: smooth;
   }
 }
 

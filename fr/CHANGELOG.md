@@ -15,11 +15,13 @@ et ce projet suit les recommandations de versionnage [SemVer](https://semver.org
 
 <br>
 
-## [1.0.2 – À venir]
+## [1.0.2] – 12-05-2025
 
-### 🛠️ En cours
-- Correction de l'indentation dans `browserux.css`
-- Autres améliorations prévues suite aux retours sur la version 1.0.1
+### ✨ Ajout / Modification
+
+- Suppression des couleurs codées en dur dans la section dark mode au profit de variables CSS
+- Correction des indentations incohérentes dans `browserux.css`
+- Correction de commentaires erronés dans le fichier CSS
 
 <br>
 

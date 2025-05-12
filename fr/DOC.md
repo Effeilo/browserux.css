@@ -303,8 +303,8 @@ Cette section ajuste dynamiquement les variables CSS pour refléter cette préf�
 @media (prefers-color-scheme: dark) {
   :root {
     /* Exemples : */
-    --ui-page-bg: #eaeaea;
-    --ui-page-color: #121212;
+    --ui-page-bg: #121212;
+    --ui-page-color: #eaeaea;
     --ui-color-primary: #f05e0e;
     --ui-color-secondary: #0e93f0;
     /* etc. */

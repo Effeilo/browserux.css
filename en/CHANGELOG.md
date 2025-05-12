@@ -15,11 +15,13 @@ and this project adheres to [Semantic Versioning (SemVer)](https://semver.org/).
 
 <br>
 
-## [1.0.2 – Upcoming]
+## [1.0.2] – 2025-05-12
 
-### 🛠️ In Progress
-- Fixed indentation in `browserux.css`
-- Other improvements planned based on feedback from version 1.0.1
+### ✨ Added / Changed
+
+- Removed hardcoded color values from the dark mode section in favor of CSS variables
+- Fixed inconsistent indentation in `browserux.css`
+- Corrected inaccurate comments in the CSS file
 
 <br>
 
@@ -30,6 +32,7 @@ and this project adheres to [Semantic Versioning (SemVer)](https://semver.org/).
 ## [1.0.1] – 2025-05-05
 
 ### ✨ Added
+
 - Initial stable release of **`browserux.css`**:
   - `browserux.css` (readable version)
   - `browserux.min.css` (minified version)
