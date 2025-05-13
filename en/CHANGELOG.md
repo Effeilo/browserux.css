@@ -15,6 +15,20 @@ and this project adheres to [Semantic Versioning (SemVer)](https://semver.org/).
 
 <br>
 
+## [1.1.0] – 2025-05-13
+
+### 🔧 Changed
+
+- Removed the `browserux.min.css` file from the npm package: 
+  The project encourages customization through CSS variables, so users are now expected to handle minification during their own build process.
+- Updated documentation and README to clarify the intended usage and remove references to the minified file
+
+<br>
+
+---
+
+<br>
+
 ## [1.0.2] – 2025-05-12
 
 ### ✨ Added / Changed

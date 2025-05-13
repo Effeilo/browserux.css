@@ -89,43 +89,22 @@ Voici trois méthodes simples pour l’ajouter à votre projet :
 
 Vous pouvez inclure directement la dernière version via jsDelivr :
 
-#### Version normale (complète avec commentaires)
-
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Effeilo/browserux.css/browserux.css">
 ```
-
-- Version complète et lisible.
-- Idéale pour l’apprentissage, le développement et la compréhension de la structure.
-
-#### Version minifiée (optimisée pour la production)
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Effeilo/browserux.css/browserux.min.css">
-```
-
-- Fichier plus léger.
-- Parfait pour les sites en production où la performance est essentielle.
 
 <br>
 
 ### 💾 Télécharger et héberger localement
 
-Vous pouvez également télécharger les deux fichiers suivants :
+Vous pouvez également télécharger le fichier suivant :
 
 - `browserux.css` (version normale commentée).
-- `browserux.min.css` (version minifiée et compressée).
 
-Puis les inclure localement dans votre projet :
+Puis l'inclure localement dans votre projet :
 
 ```html
 <link rel="stylesheet" href="/path/to/browserux.css">
-```
-
-ou
-
-```html
-<link rel="stylesheet" href="/path/to/browserux.min.css">
 ```
 
 <br>
@@ -144,12 +123,6 @@ Une fois installé, vous pouvez l’importer dans votre projet :
 
 ```html
 <link rel="stylesheet" href="./node_modules/browserux.css/browserux.css">
-```
-
-ou en version minifiée :
-
-```html
-<link rel="stylesheet" href="./node_modules/browserux.css/browserux.min.css">
 ```
 
 #### Import direct dans JavaScript (Vite, Webpack, Parcel)
@@ -174,17 +147,9 @@ import 'browserux.css/browserux.css';
 
 | Method | File | Use case |
 |:--|:--|:--|
-| CDN (normal) | `browserux.css` | Development, apprentissage |
-| CDN (minifié) | `browserux.min.css` | Production, optimisation |
-| Local (normal) | `/assets/css/browserux.css` | Développement personnalisé, modifications |
-| Local (minifié) | `/assets/css/browserux.min.css` | 	Déploiement en production |
-| npm install (normal) | `browserux.css` via node_modules | Intégration avec un bundler |
-| npm install (minifié) | `browserux.min.css` via node_modules | Build de production optimisé |
-
-### 💡 Notes
-
-- **Version normale**: idéale si vous souhaitez lire, comprendre et modifier le fichier avec ses commentaires.
-- **Version minifiée**:  mêmes fonctionnalités, poids réduit (sans commentaires), parfaite pour les environnements de production.
+| CDN | `browserux.css` | Development, apprentissage |
+| Local | `/assets/css/browserux.css` | Développement personnalisé, modifications |
+| npm install | `browserux.css` via node_modules | Intégration avec un bundler |
 
 ---
 

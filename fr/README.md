@@ -182,35 +182,20 @@ Voici trois méthodes simples pour l’ajouter à votre projet :
 
 Vous pouvez inclure directement la dernière version via jsDelivr :
 
-#### Version normale (complète avec commentaires)
-
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Effeilo/browserux.css/browserux.css">
 ```
 
-#### Version minifiée (optimisée pour la production)
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Effeilo/browserux.css/browserux.min.css">
-```
-
 ### 💾 Télécharger et héberger localement
 
-Vous pouvez également télécharger les deux fichiers suivants :
+Vous pouvez également télécharger le fichier :
 
-- `browserux.css` (version normale commentée).
-- `browserux.min.css` (version minifiée et compressée).
+- `browserux.css`.
 
-Puis les inclure localement dans votre projet :
+Puis l'inclure localement dans votre projet :
 
 ```html
 <link rel="stylesheet" href="/path/to/browserux.css">
-```
-
-ou
-
-```html
-<link rel="stylesheet" href="/path/to/browserux.min.css">
 ```
 
 ### 📦 Utilisation via npm
@@ -227,12 +212,6 @@ Une fois installé, vous pouvez l’importer dans votre projet :
 
 ```html
 <link rel="stylesheet" href="./node_modules/browserux.css/browserux.css">
-```
-
-ou en version minifiée :
-
-```html
-<link rel="stylesheet" href="./node_modules/browserux.css/browserux.min.css">
 ```
 
 #### Import direct dans JavaScript (Vite, Webpack, Parcel)

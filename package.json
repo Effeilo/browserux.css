@@ -1,11 +1,10 @@
 {
     "name": "browserux.css",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "description": "Minimal, accessible and ergonomic CSS base – A modern CSS foundation built on native HTML/CSS capabilities.",
     "main": "browserux.css",
     "files": [
-      "browserux.css",
-      "browserux.min.css"
+      "browserux.css"
     ],
     "keywords": [
       "css",

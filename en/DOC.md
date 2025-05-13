@@ -89,44 +89,24 @@ Here are three simple ways to add it to your project:
 
 You can include the latest version directly via jsDelivr:
 
-#### Full version (with comments)
-
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Effeilo/browserux.css/browserux.css">
 ```
-
-- Full, readable version.  
-- Ideal for learning, development, and understanding the structure.
-
-#### Minified version (optimized for production)
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Effeilo/browserux.css/browserux.min.css">
-```
-
-- Smaller file size.  
-- Perfect for production websites where performance is key.
 
 <br>
 
 ### 💾 Download and Host Locally
 
-You can also download the following two files:
+You can also download the following file:
 
-- `browserux.css` (full version with comments)  
-- `browserux.min.css` (minified and compressed version)
+- `browserux.css` 
 
-Then include them locally in your project:
+Then include him locally in your project:
 
 ```html
 <link rel="stylesheet" href="/path/to/browserux.css">
 ```
 
-or
-
-```html
-<link rel="stylesheet" href="/path/to/browserux.min.css">
-```
 ### 📦 Use via npm
 
 You can also install `browserux.css` via npm for better integration with modern workflows (Vite, Webpack, Parcel, etc.):
@@ -141,12 +121,6 @@ Once installed, you can import it into your project:
 
 ```html
 <link rel="stylesheet" href="./node_modules/browserux.css/browserux.css">
-```
-
-or the minified version:
-
-```html
-<link rel="stylesheet" href="./node_modules/browserux.css/browserux.min.css">
 ```
 
 #### Direct Import in JavaScript (Vite, Webpack, Parcel)
@@ -171,17 +145,9 @@ import 'browserux.css/browserux.css';
 
 | Method           | File                            | Use Case                               |
 |:----------------|:---------------------------------|:----------------------------------------|
-| CDN (normal)     | `browserux.css`                 | Development, learning                   |
-| CDN (minified)   | `browserux.min.css`             | Production, optimization                |
-| Local (normal)   | `/assets/css/browserux.css`     | Custom development, modifications       |
-| Local (minified) | `/assets/css/browserux.min.css` | Production deployment                   |
-| npm install (normal) | `browserux.css` via node_modules | Integration with a bundler         |
-| npm install (minified) | `browserux.min.css` via node_modules | Optimized production build      |
-
-### 💡 Notes
-
-- **Normal version**: ideal if you want to read, understand, and edit the file with comments.  
-- **Minified version**: same functionality, reduced size (no comments), perfect for production environments.
+| CDN     | `browserux.css`                 | Development, learning                   |
+| Local   | `/assets/css/browserux.css`     | Custom development, modifications       |
+| npm install | `browserux.css` via node_modules | Integration with a bundler         |  |
 
 ---
 

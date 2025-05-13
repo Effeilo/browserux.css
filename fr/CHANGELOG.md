@@ -15,6 +15,20 @@ et ce projet suit les recommandations de versionnage [SemVer](https://semver.org
 
 <br>
 
+## [1.1.0] – 13-05-2025
+
+### 🔧 Modifié
+
+- Suppression du fichier `browserux.min.css` du package npm :   
+  Le projet étant conçu pour être personnalisé via les variables CSS, les utilisateurs doivent désormais effectuer eux-mêmes la minification lors de leur processus de build.
+- Mise à jour de la documentation et du README pour clarifier l’usage recommandé et retirer les références à la version minifiée
+
+<br>
+
+---
+
+<br>
+
 ## [1.0.2] – 12-05-2025
 
 ### ✨ Ajout / Modification

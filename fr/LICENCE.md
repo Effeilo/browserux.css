@@ -1,7 +1,7 @@
 [EN](../en/LICENSE.md) | **FR**
 
 <div>
-  <img src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX"/>
+  <img src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX v1.1.0"/>
 </div>
 
 # ⚖️ Licence MIT
