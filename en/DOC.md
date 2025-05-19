@@ -30,6 +30,7 @@ Welcome to the `browserux.css` documentation.
   - ⚙️ [2. Browser User Preferences](#2-%EF%B8%8F-browser-user-preferences)
     - 🌙 [Theme Preferences](#-theme-preferences-prefers-color-scheme)
     - 🎛️ [Animation Preferences](#%EF%B8%8F-animation-preferences-prefers-reduced-motion)
+    - 🌓 [Contrast Preferences](#-contrast-preferences-prefers-contrast)
   - 🧩 [3. Browser Interface Theme](#3--browser-interface-theme)
     - 🖍️ [Text Selection](#%EF%B8%8F-text-selection-selection)
     - 🖱️ [Scrollbar](#%EF%B8%8F-scrollbars)
@@ -243,7 +244,7 @@ Base variables used to configure font, text size, and global line height.
 | Variable                     | Role                                 | Default Value       |
 |------------------------------|--------------------------------------|----------------------|
 | `--ui-typo-font-family`      | Main document font                   | System + fallback    |
-| `--ui-typo-mono-font-family` | Monospace font (for code, pre, etc.) | Standard monospace   |
+| `--ui-typo-font-family-mono` | Monospace font (for code, pre, etc.) | Standard monospace   |
 | `--ui-typo-font-size`        | Base size (`rem`)                    | `1.6rem`             |
 | `--ui-typo-line-height`      | Line height                          | `1.6`                |
 
@@ -341,6 +342,69 @@ If the user hasn’t disabled animations, smooth scrolling is enabled across the
 
 ✅ These preferences are natively handled by CSS, no scripts needed, and contribute to a smooth, inclusive, and modern user experience.
 
+<br>
+
+#### 🌓 Contrast Preferences (prefers-contrast)
+
+Users can indicate a preference for enhanced visual contrast, usually through their operating system settings (Windows, macOS, etc.). This CSS section improves the readability of interface elements that are often too subtle by default.
+
+```css
+@media (prefers-contrast: more) {
+```
+Activates this block only if the user has explicitly requested increased contrast.
+
+```css
+::placeholder {
+  color: rgba(16, 16, 16, 0.8);
+  opacity: 1;
+}
+```
+
+- `::placeholder` : Targets placeholder text in form fields (`input`, `textarea`, etc.).
+- `color: rgba(16, 16, 16, 0.8);` : Applies a dark gray tone with slight transparency to increase contrast while remaining visually distinct from actual input content.
+- `opacity: 1;` : Some browsers apply reduced opacity by default — this line ensures full opacity for consistent legibility.
+
+```css
+[disabled] {
+  color: rgba(16, 16, 16, 0.8);
+}
+```
+
+- `[disabled]` : Targets any HTML element with the `disabled` attribute (inputs, buttons, selects, etc.).
+- `color: rgba(16, 16, 16, 0.8);` : Prevents these elements from appearing overly faded or hard to see, while still clearly indicating their disabled state.
+
+```css
+::selection {
+  text-shadow: none;
+}
+```
+
+- `::selection` : Customizes the appearance of text when selected (via mouse or keyboard).
+- `text-shadow: none;` : Removes any shadow or glow effect (often used in dark themes) that could reduce text clarity in high-contrast modes.
+
+```css
+em,
+i,
+small {
+  font-weight: bold;
+}
+```
+
+- `em`, `i` : These tags typically render emphasized text in italic, which can become hard to read under high-contrast conditions.
+- `small` : Reduces text size, making it potentially difficult to read.
+- `font-weight: bold;` : Visually reinforces these elements to improve accessibility without altering their semantic meaning.
+
+✅ Benefits Summary:
+
+- Improves readability of typically subtle or visually de-emphasized elements.
+- Requires no JavaScript: pure CSS.
+- Compatible with all modern browsers that support `prefers-contrast`.
+- Pairs elegantly with `prefers-color-scheme` for fully adaptive theming based on user preferences.
+
+> ♿ Accessibility & 🧩 Usability
+
+<br>
+
 ---
 
 <br>
@@ -371,7 +435,18 @@ Customizes the appearance of text selected by the user (background, color, shado
 Customizes native scrollbars to provide a more consistent appearance across browsers.  
 Supports WebKit/Blink (Chrome, Safari, Edge Chromium) and Firefox (Gecko).
 
-##### Main Style (WebKit / Blink)
+##### Firefox Support (Gecko)
+
+```css
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track);
+    scrollbar-width: auto;
+  }
+}
+```
+
+##### WebKit / Blink Support (Chrome, Safari, Edge Chromium)
 
 ```css
 ::-webkit-scrollbar {
@@ -388,19 +463,6 @@ Supports WebKit/Blink (Chrome, Safari, Edge Chromium) and Firefox (Gecko).
   background-color: var(--ui-scrollbar-thumb-hover);
 }
 ```
-> Applied in Chrome, Safari, Edge Chromium
-
-##### Firefox Support (Gecko)
-
-```css
-html {
-  scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track);
-  scrollbar-width: thin;
-}
-```
-> Compatible with Firefox 64+
-
-##### Visual Cleanup (WebKit / Blink)
 
 Removes unnecessary buttons and corners for a cleaner appearance.
 
@@ -843,7 +905,7 @@ Applies a consistent set of monospace fonts across all browsers, useful for `pre
 
 ```css
 pre {
-  font-family: var(--ui-typo-mono-font-family);
+  font-family: var(--ui-typo-font-family-mono);
 }
 ```
 > ⚙️ Normalization
@@ -972,7 +1034,7 @@ Ensures a readable and uniform display of code, regardless of browser or OS.
 code, 
 kbd, 
 samp {
-  font-family: var(--ui-typo-mono-font-family);
+  font-family: var(--ui-typo-font-family-mono);
 }
 ```
 > ⚙️ Normalization
@@ -1044,17 +1106,18 @@ area {
 
 <br>
 
-##### Images, SVGs & Videos (`img`, `svg`, `video`)
+##### Inline media elements (`audio`, `canvas`, `iframe`, `img`, `svg`, `video`)
 
-Preserves the natural proportions of multimedia elements and prevents media from overflowing their container width.  
-Together, these rules enable smooth and responsive scaling of images and videos, ensuring good adaptation on all types of screens.
+Prevents unwanted vertical spacing beneath media elements when displayed inline (`inline` or `inline-block`). This spacing is caused by the default alignment to the text baseline. Setting `vertical-align: middle;` ensures consistent visual alignment by centering the elements vertically within the line, improving layout precision in mixed text/media contexts.
 
 ```css
-img, 
-svg, 
+audio,
+canvas,
+iframe,
+img,
+svg,
 video {
-  height: auto;
-  max-width: 100%;
+  vertical-align: middle;
 }
 ```
 > ⚙️ Normalization and 🧩 Usability
@@ -1072,6 +1135,23 @@ img::selection {
 }
 ```
 > 🧩 Usability
+
+<br>
+
+##### Images, SVGs & Videos (`img`, `svg`, `video`)
+
+Preserves the natural proportions of multimedia elements and prevents media from overflowing their container width.  
+Together, these rules enable smooth and responsive scaling of images and videos, ensuring good adaptation on all types of screens.
+
+```css
+img, 
+svg, 
+video {
+  height: auto;
+  max-width: 100%;
+}
+```
+> ⚙️ Normalization and 🧩 Usability
 
 <br>
 

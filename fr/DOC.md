@@ -30,6 +30,7 @@ Bienvenue sur la documentation de `browserux.css`.
   - ⚙️ [2. Préférences utilisateur du navigateur](#2-%EF%B8%8F-préférences-utilisateur-du-navigateur)
     - 🌙 [Préférences du thème](#-préférences-du-thème-prefers-color-scheme)
     - 🎛️ [Préférences des animations](#%EF%B8%8F-préférences-des-animations-prefers-reduced-motion)
+    - 🌓 [Préférences de contraste](#-preferences-de-contraste-prefers-contrast)
   - 🧩 [3. Thème de l'interface du navigateur](#3--thème-de-linterface-du-navigateur)
     - 🖍️ [Sélection de texte](#%EF%B8%8F-sélection-de-texte-selection)
     - 🖱️ [Barre de défilement](#%EF%B8%8F-barres-de-défilement)
@@ -245,7 +246,7 @@ Variables de base utilisées pour configurer la police, la taille de texte et l�
 | Variable                    | Rôle                                 | Valeur par défaut |
 |-----------------------------|--------------------------------------|-------------------|
 | `--ui-typo-font-family`     | Police principale du document        | Système + fallback |
-| `--ui-typo-mono-font-family`| Police monospace (code, pre…)        | Monospace standard |
+| `--ui-typo-font-family-mono`| Police monospace (code, pre…)        | Monospace standard |
 | `--ui-typo-font-size`       | Taille de base (`rem`)               | `1.6rem`          |
 | `--ui-typo-line-height`     | Interligne                           | `1.6`             |
 
@@ -342,6 +343,68 @@ Si l’utilisateur n’a pas désactivé les animations, on active un défilemen
 <br>
 
 ✅ Ces préférences sont nativement gérées par CSS, sans script, et contribuent à une expérience utilisateur fluide, inclusive et moderne.
+ 
+<br>
+
+#### 🌓 Préférences de contraste (prefers-contrast)
+
+L’utilisateur peut spécifier une préférence pour un affichage à contraste renforcé, généralement via son système d’exploitation (Windows, macOS, etc.). Cette section CSS améliore la lisibilité des éléments d’interface trop discrets par défaut.
+
+```css
+@media (prefers-contrast: more) {
+```
+Active ce bloc uniquement si l'utilisateur a explicitement demandé un contraste plus élevé.
+
+```css
+::placeholder {
+  color: rgba(16, 16, 16, 0.8);
+  opacity: 1;
+}
+```
+
+- `::placeholder` : cible le texte d’espace réservé dans les champs de formulaire (`input`, `textarea`, etc.).
+- `color: rgba(16, 16, 16, 0.8);` : applique un gris foncé semi-opaque pour améliorer le contraste tout en gardant un ton visuellement distinct du contenu.
+- `opacity: 1;` : certains navigateurs ajoutent une opacité réduite par défaut, cette ligne force une opacité maximale pour assurer une lisibilité constante.
+
+```css
+[disabled] {
+  color: rgba(16, 16, 16, 0.8);
+}
+```
+
+- `[disabled]` : cible tous les éléments HTML porteurs de l’attribut `disabled` (inputs, boutons, sélecteurs, etc.).
+- `color: rgba(16, 16, 16, 0.8);` : évite que ces éléments paraissent trop estompés ou peu visibles, tout en conservant une apparence désactivée.
+
+```css
+::selection {
+  text-shadow: none;
+}
+```
+
+- `::selection` : modifie le rendu du texte sélectionné à la souris ou au clavier.
+- `text-shadow: none;` : supprime tout effet de flou ou de halo (souvent utilisé en thème sombre) qui pourrait réduire la lisibilité du texte sélectionné en contraste élevé.
+
+```css
+em,
+i,
+small {
+  font-weight: bold;
+}
+```
+
+- `em`, `i` : ces balises représentent du texte mis en valeur (généralement en italique), mais leur style peut devenir peu lisible en environnement à contraste fort.
+- `small` : rend le texte plus petit, donc potentiellement plus difficile à lire.
+- `font-weight: bold;` : renforce visuellement ces textes pour améliorer leur accessibilité sans altérer leur signification sémantique.
+
+✅ Résumé des bénéfices :
+- Renforce la lisibilité des éléments normalement subtils ou visuellement atténués.
+- Aucune dépendance JavaScript : pur CSS.
+- Compatible avec tous les navigateurs modernes prenant en charge `prefers-contrast`.
+- Se combine élégamment avec `prefers-color-scheme` pour un thème entièrement réactif aux préférences utilisateur.
+
+> ♿ Accessibilité et 🧩 Ergonomie
+
+<br>
 
 ---
 
@@ -373,7 +436,18 @@ Personnalise l’apparence du texte sélectionné par l’utilisateur (fond, cou
 Personnalise les barres de défilement natives pour offrir un rendu plus cohérent entre navigateurs.
 Prend en charge WebKit/Blink (Chrome, Safari, Edge Chromium) et Firefox (Gecko).
 
-##### Style principal (WebKit / Blink)
+##### Support Firefox (Gecko)
+
+```css
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track);
+    scrollbar-width: auto;
+  }
+}
+```
+
+##### Support WebKit / Blink (Chrome, Safari, Edge Chromium)
 
 ```css
 ::-webkit-scrollbar {
@@ -390,19 +464,6 @@ Prend en charge WebKit/Blink (Chrome, Safari, Edge Chromium) et Firefox (Gecko).
   background-color: var(--ui-scrollbar-thumb-hover);
 }
 ```
-> Appliqué dans Chrome, Safari, Edge Chromium
-
-##### Support Firefox (Gecko)
-
-```css
-html {
-  scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track);
-  scrollbar-width: thin;
-}
-```
-> Compatible avec Firefox 64+
-
-##### Nettoyage visuel (WebKit / Blink)
 
 Supprime les boutons et coins inutiles pour une apparence plus épurée.
 
@@ -836,7 +897,7 @@ Applique une série de polices monospace cohérente pour tous les navigateurs, u
 
 ```css
 pre {
-  font-family: var(--ui-typo-mono-font-family);
+  font-family: var(--ui-typo-font-family-mono);
 }
 ```
 > ⚙️ Normalisation
@@ -963,7 +1024,7 @@ Applique une police monospace uniforme pour tous les blocs de code, saisie clavi
 code, 
 kbd, 
 samp {
-  font-family: var(--ui-typo-mono-font-family);
+  font-family: var(--ui-typo-font-family-mono);
 }
 ```
 > ⚙️ Normalisation
@@ -1033,16 +1094,18 @@ area {
 
 <br>
 
-##### Images, SVG & vidéos (`img`, `svg`, `video`)
+##### Éléments multimédias en ligne (`audio`, `canvas`, `iframe`, `img`, `svg`, `video`)
 
-Préserve les proportions naturelles des éléments multimédias et empêche les médias de dépasser la largeur de leur conteneur. Ensemble, ces règles permettent une mise à l’échelle fluide et réactive des images et vidéos. Cela assure une bonne adaptation sur tous types d’écrans.
+Évite l’apparition d’un espace indésirable sous les éléments multimédias lorsqu’ils sont affichés dans un flux en ligne (`inline` ou `inline-block`). Ce comportement est dû à l’alignement par défaut sur la ligne de base du texte. En les alignant verticalement au milieu, on prévient ce décalage visuel et on assure une meilleure cohérence de rendu dans des contextes mixtes texte/média.
 
 ```css
-img, 
-svg, 
+audio,
+canvas,
+iframe,
+img,
+svg,
 video {
-  height: auto;
-  max-width: 100%;
+  vertical-align: middle;
 }
 ```
 > ⚙️ Normalisation et 🧩 Ergonomie
@@ -1059,6 +1122,22 @@ img::selection {
 }
 ```
 > 🧩 Ergonomie
+
+<br>
+
+##### Images, SVG & vidéos (`img`, `svg`, `video`)
+
+Préserve les proportions naturelles des éléments multimédias et empêche les médias de dépasser la largeur de leur conteneur. Ensemble, ces règles permettent une mise à l’échelle fluide et réactive des images et vidéos. Cela assure une bonne adaptation sur tous types d’écrans.
+
+```css
+img, 
+svg, 
+video {
+  height: auto;
+  max-width: 100%;
+}
+```
+> ⚙️ Normalisation et 🧩 Ergonomie
 
 <br>
 

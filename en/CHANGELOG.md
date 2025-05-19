@@ -15,6 +15,67 @@ and this project adheres to [Semantic Versioning (SemVer)](https://semver.org/).
 
 <br>
 
+## [1.2.0] – 2025-05-19
+
+### ✨ Added
+
+- Support for user contrast preferences (`prefers-contrast`)
+  Introduced a @media (`prefers-contrast: more`) query to enhance visual accessibility in high contrast environments. This rule improves the visibility of elements that are typically rendered with reduced emphasis by default:
+  - Improved contrast for placeholder text (`::placeholder`) and disabled form elements (`[disabled]`)
+  - Removal of visual artifacts on text selection
+  - Enhanced readability for italic and small-sized text
+  
+```css
+@media (prefers-contrast: more) {
+  ::placeholder {
+    color: rgba(16, 16, 16, 0.8);
+    opacity: 1;
+  }
+
+  [disabled] {
+    color: rgba(16, 16, 16, 0.8);
+  }
+
+  ::selection {
+    text-shadow: none;
+  }
+
+  em,
+  i,
+  small {
+    font-weight: bold;
+  }
+}
+```
+
+- Inline media alignment
+  Added vertical alignment rule for media elements (`audio`, `canvas`, `iframe`, `img`, `svg`, `video`) to remove the default baseline gap when displayed inline:
+
+```css
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+```
+
+### 🔧 Changed
+
+- Scrollbar styling strategy
+  Reworked the scrollbar styling system to better support modern WebKit-based browsers (Chrome > 120, Edge > 120, Safari > 18.1) by scoping the `scrollbar-color` property to Firefox only using a `@supports (-moz-appearance: none)` block. This allows WebKit pseudo-elements (`::-webkit-scrollbar`) to apply properly:
+  - `scrollbar-color` is now scoped to Firefox via `@supports`
+  - WebKit scrollbar styles (track, thumb, hover, corner) are preserved and fully effective
+  - `::-webkit-scrollbar-thumb` now has `border-radius` for smoother appearance
+
+<br>
+
+---
+
+<br>
+
 ## [1.1.0] – 2025-05-13
 
 ### 🔧 Changed

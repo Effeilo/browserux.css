@@ -1,4 +1,4 @@
-/*! browserux.css 1.1.0 | 2025 MIT Licence | github.com/Effeilo/browserux.css */
+/*! browserux.css 1.2.0 | 2025 MIT Licence | github.com/Effeilo/browserux.css */
 
 /* ----------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@
 
   /* Typography */
   --ui-typo-font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-  --ui-typo-mono-font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  --ui-typo-font-family-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
   --ui-typo-font-size: 1.6rem;
   --ui-typo-line-height: 1.6;
 }
@@ -98,13 +98,13 @@ body {
 }
 
 /**
-  * When the user has requested reduced motion (for accessibility reasons).
-    @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
-  * 1. Force animations to have zero duration to avoid triggering motion sickness or distraction.
-  * 2. Force animations to stop after a single iteration to prevent infinite animations from continuing.
-  * 3. Disable smooth scrolling, falling back to instant jumps between anchors and scroll events.
-  * 4. Force transitions to have zero duration to eliminate motion during state changes.
-*/
+ * When the user has requested reduced motion (for accessibility reasons).
+   @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+ * 1. Force animations to have zero duration to avoid triggering motion sickness or distraction.
+ * 2. Force animations to stop after a single iteration to prevent infinite animations from continuing.
+ * 3. Disable smooth scrolling, falling back to instant jumps between anchors and scroll events.
+ * 4. Force transitions to have zero duration to eliminate motion during state changes.
+ */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -114,6 +114,51 @@ body {
     animation-iteration-count: 1 !important; /* 2 */
     scroll-behavior: auto !important; /* 3 */
     transition-duration: 0s !important; /* 4 */
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ ## Contrast Preferences
+---------------------------------------------------------------------------- */
+
+/**
+ * Enhances readability for users who prefer increased contrast.
+   @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
+ */
+
+@media (prefers-contrast: more) {
+  /**
+   * Improves visibility of placeholder text and disabled elements.
+   * These elements are often too faint in default browser styles.
+   */
+
+  ::placeholder {
+    color: rgba(16, 16, 16, 0.8);
+    opacity: 1;
+  }
+
+  [disabled] {
+    color: rgba(16, 16, 16, 0.8);
+  }
+
+  /**
+   * Removes text shadow on selected text.
+   * Prevents visual artifacts that reduce contrast when selecting text.
+   */
+
+  ::selection {
+    text-shadow: none;
+  }
+
+  /**
+   * Reinforces visibility of typographically de-emphasized elements.
+   * Italic or small text can be hard to read in high-contrast environments.
+   */
+
+  em,
+  i,
+  small {
+    font-weight: bold;
   }
 }
 
@@ -142,7 +187,28 @@ body {
 ---------------------------------------------------------------------------- */
 
 /**
- * Styles the native scrollbar for WebKit/Blink browsers (Chrome, Edge Chromium, Safari).
+ * Applies standard scrollbar styling only in Firefox, allowing more advanced 
+ * customization with WebKit pseudo-elements in other modern browsers (Chrome, Safari, Edge). 
+ * Without this block, `::-webkit-scrollbar` rules will be ignored in 
+ * Chrome > 120, Edge > 120, and Safari > 18.1, because `scrollbar-color` 
+ * overrides them if present globally.
+ */
+
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track);
+    scrollbar-width: auto;
+  }
+}
+
+/**
+ * WebKit scrollbar pseudo-elements used for advanced customization
+ * in all modern non-Firefox browsers. These styles are now fully active because 
+ * scrollbar-color is scoped to Firefox only.
+ */
+
+/**
+ * Styles the native scrollbar.
  */
 
 ::-webkit-scrollbar {
@@ -150,7 +216,7 @@ body {
 	height: var(--ui-scrollbar-horizontal-height);
 	width: var(--ui-scrollbar-vertical-width);
 }
-
+ 
 /**
  * Hides scrollbar buttons for a cleaner look.
  */
@@ -160,24 +226,16 @@ body {
 }
 
 /**
- * Prevents a background color from appearing in the scrollbar corner 
- * (the intersection between horizontal and vertical scrollbars).
- */
-
-::-webkit-scrollbar-corner {
-  background: transparent;
-}
- 
-/**
  * Styles the scrollbar track and thumb.
  */
 
 ::-webkit-scrollbar-track {
-	background-color: var(--ui-scrollbar-track);
+  background-color: var(--ui-scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
 	background-color: var(--ui-scrollbar-thumb);
+  border-radius: calc(var(--ui-scrollbar-vertical-width) / 2);
 }
 	
 ::-webkit-scrollbar-thumb:hover {
@@ -185,12 +243,12 @@ body {
 }
 
 /**
- * Enables custom scrollbar styling in Firefox.
+ * Prevents a background color from appearing in the scrollbar corner 
+ * (the intersection between horizontal and vertical scrollbars).
  */
 
-html {
-  scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track);
-  scrollbar-width: thin;
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 /* ----------------------------------------------------------------------------
@@ -334,8 +392,8 @@ summary {
 
 /**
  * Inherits the `box-sizing` property for all elements and pseudo-elements.
- * @for All modern browsers.
- * @see https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+   @for All modern browsers.
+   @see https://www.paulirish.com/2012/box-sizing-border-box-ftw/
  */
 
 *,
@@ -359,24 +417,24 @@ html {
 
 /**
  * 1. Improve consistency of default fonts in all browsers.
- *    @see https://github.com/sindresorhus/modern-normalize/issues/3
+      @see https://github.com/sindresorhus/modern-normalize/issues/3
  * 2. Relative value unit refers to the size of the parent element.
- *    Browsers' font size default is 16px. For a 1em/10px report,
- *    we divide the size by the default size: 10/16 x 100 = 62.5%.
+      Browsers' font size default is 16px. For a 1em/10px report,
+      we divide the size by the default size: 10/16 x 100 = 62.5%.
  * 3. Ensure the root element covers the full viewport height for consistent layouts.
  * 4. Force scrollbars to always be visible to prevent awkward jumps when
- *    navigating between pages that do/do not have enough content to produce
- *    scrollbars naturally.
- *    @see https://css-tricks.com/snippets/css/force-vertical-scrollbar/
+      navigating between pages that do/do not have enough content to produce
+      scrollbars naturally.
+      @see https://css-tricks.com/snippets/css/force-vertical-scrollbar/
  * 5. Fonts on macOS will look more consistent with other systems that do not
- *    render text using sub-pixel anti-aliasing.
- *    @for macOS.
+      render text using sub-pixel anti-aliasing.
+      @for macOS.
  * 6. Remove the highlighting effect when "tapped" action on webkit browsers.
- *    @for Androids.
+      @for Androids.
  * 7. Use a more readable tab size.
  * 8. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- *    @for iOS Safari 5.1+.
+      user zoom.
+      @for iOS Safari 5.1+.
  */
 
 html {
@@ -401,7 +459,7 @@ html {
  * 1. Initializes page background color
  * 2. Initializes page color, font size and line height using CSS variables.
  * 3. Ensures the body element always fills at least the full viewport height,
- *    providing better structure for layouts and preventing collapsing pages.
+      providing better structure for layouts and preventing collapsing pages.
  */
  
 body {
@@ -427,11 +485,11 @@ pre {
 
 /**
  * Applies a consistent monospace font stack across browsers.
- * @see https://github.com/sindresorhus/modern-normalize/issues/3
+   @see https://github.com/sindresorhus/modern-normalize/issues/3
  */
  
 pre {
-  font-family: var(--ui-typo-mono-font-family);
+  font-family: var(--ui-typo-font-family-mono);
 }
 
 /**
@@ -452,7 +510,7 @@ ul {
  * 1. Removes text-decoration and outline on links.
  * 2. Improves underline rendering by skipping descenders.
  * 3. Removes 300ms delay on clickable elements on mobile.
- *    @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
+      @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
  */
 
 a {
@@ -494,13 +552,13 @@ code {
 
 /**
  * Applies a consistent monospace font stack across browsers.
- * @see https://github.com/sindresorhus/modern-normalize/issues/3
+   @see https://github.com/sindresorhus/modern-normalize/issues/3
  */
  
 code, 
 kbd, 
 samp {
-  font-family: var(--ui-typo-mono-font-family);
+  font-family: var(--ui-typo-font-family-mono);
 }
 
 /**
@@ -537,11 +595,36 @@ sup {
 
 /**
  * Removes 300ms delay on area elements on mobile.
- * @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
+   @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
  */
 
 area {
   touch-action: manipulation;
+}
+
+/**
+ * Remove the gap between audio, canvas, iframes,
+   images, videos and the bottom of their containers.
+   @see https:////github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Prevents selection highlight when dragging images.
+ * Not all browsers apply ::selection on images consistently.
+   @see https://stackoverflow.com/questions/6816080/how-to-disable-highlight-on-a-image
+ */
+
+img::selection {
+  background-color: var(--ui-transparent);
 }
 
 /**
@@ -554,16 +637,6 @@ svg,
 video {
   height: auto; /* 1 */
   max-width: 100%; /* 2 */
-}
-
-/**
- * Prevents selection highlight when dragging images.
- * Not all browsers apply ::selection on images consistently.
-   @see https://stackoverflow.com/questions/6816080/how-to-disable-highlight-on-a-image
- */
-
-img::selection {
-  background-color: var(--ui-transparent);
 }
 
 /**
@@ -580,11 +653,11 @@ svg {
 
 /**
  * 1. Correct table border color inheritance in Chrome and Safari.
- *    @see https://bugs.chromium.org/p/chromium/issues/detail?id=935729
- *    @see https://bugs.webkit.org/show_bug.cgi?id=195016
+      @see https://bugs.chromium.org/p/chromium/issues/detail?id=935729
+      @see https://bugs.webkit.org/show_bug.cgi?id=195016
  * 2. Remove text indentation from table contents in Chrome and Safari.
- *    @see https://bugs.chromium.org/p/chromium/issues/detail?id=999088
- *    @see https://bugs.webkit.org/show_bug.cgi?id=201297
+      @see https://bugs.chromium.org/p/chromium/issues/detail?id=999088
+      @see https://bugs.webkit.org/show_bug.cgi?id=201297
  */
 
 table {
@@ -620,7 +693,7 @@ button {
 
 /**
  * Removes 300ms tap delay on clickable form elements on mobile.
- * @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
+   @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
  */
 
 button, 
@@ -727,7 +800,7 @@ progress {
 
 /**
  * Allow only vertical resizing of textareas for better UX.
- * @for Firefox 5+, Chrome 4+, Safari 4+, Opera 12.1+.
+   @for Firefox 5+, Chrome 4+, Safari 4+, Opera 12.1+.
  */
 
 textarea {
@@ -764,7 +837,7 @@ textarea {
 
 /**
  * Remove additional invalid styles in Firefox.
- * @see https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+   @see https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
  */
 
 :-moz-ui-invalid {
