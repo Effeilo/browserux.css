@@ -1,4 +1,4 @@
-/*! browserux.css 1.2.0 | 2025 MIT Licence | github.com/Effeilo/browserux.css */
+/*! browserux.css 2.0.0 | 2025 MIT Licence | github.com/Effeilo/browserux.css */
 
 /* ----------------------------------------------------------------------------
 
@@ -8,42 +8,42 @@
 
 :root {
   /* Global colors */
-  --ui-page-bg: #eaeaea;
-  --ui-page-color: #121212;
-  --ui-color-primary: #f05e0e;
-  --ui-color-secondary: #0e93f0;
-  --ui-transparent: transparent;
+  --bux-page-bg: #eaeaea;
+  --bux-page-color: #121212;
+  --bux-color-primary: #f05e0e;
+  --bux-color-secondary: #0e93f0;
+  --bux-transparent: transparent;
 
   /* Form validation colors */
-  --ui-valid-border-color: #29b94c;
-  --ui-valid-bg-color: #f0fff5;
-  --ui-invalid-border-color: #dc303e;
-  --ui-invalid-bg-color: #fff0f0;
-  --ui-placeholder-color: #aaa;
-  --ui-invalid-placeholder-color: #dc303e;
+  --bux-valid-border-color: #29b94c;
+  --bux-valid-bg-color: #f0fff5;
+  --bux-invalid-border-color: #dc303e;
+  --bux-invalid-bg-color: #fff0f0;
+  --bux-placeholder-color: #aaa;
+  --bux-invalid-placeholder-color: #dc303e;
   
   /* Progress bar colors */
-  --ui-progress-bar-bg: #efefef;
-  --ui-progress-value-bg: #29b94c;
+  --bux-progress-bar-bg: #efefef;
+  --bux-progress-value-bg: #29b94c;
 
   /* Text selection */
-  --ui-selection-bg: var(--ui-page-color);
-  --ui-selection-color: var(--ui-page-bg);
-  --ui-selection-text-shadow: none;
+  --bux-selection-bg: var(--bux-page-color);
+  --bux-selection-color: var(--bux-page-bg);
+  --bux-selection-text-shadow: none;
 
   /* Scrollbar */
-  --ui-scrollbar: var(--ui-page-bg);
-  --ui-scrollbar-track: #ddecf6;
-  --ui-scrollbar-thumb: var(--ui-color-secondary);
-  --ui-scrollbar-thumb-hover: var(--ui-color-primary);
-  --ui-scrollbar-vertical-width: 10px;
-  --ui-scrollbar-horizontal-height: 10px;
+  --bux-scrollbar: var(--bux-page-bg);
+  --bux-scrollbar-track: #ddecf6;
+  --bux-scrollbar-thumb: var(--bux-color-secondary);
+  --bux-scrollbar-thumb-hover: var(--bux-color-primary);
+  --bux-scrollbar-vertical-width: 10px;
+  --bux-scrollbar-horizontal-height: 10px;
 
   /* Typography */
-  --ui-typo-font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-  --ui-typo-font-family-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
-  --ui-typo-font-size: 1.6rem;
-  --ui-typo-line-height: 1.6;
+  --bux-typo-font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --bux-typo-font-family-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  --bux-typo-font-size: 1.6rem;
+  --bux-typo-line-height: 1.6;
 }
 
 /* ----------------------------------------------------------------------------
@@ -63,10 +63,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Global colors */
-    --ui-page-bg: #121212;
-    --ui-page-color: #eaeaea;
-    --ui-color-primary: #f05e0e;
-    --ui-color-secondary: #0e93f0;
+    --bux-page-bg: #121212;
+    --bux-page-color: #eaeaea;
+    --bux-color-primary: #f05e0e;
+    --bux-color-secondary: #0e93f0;
   }
 }
 
@@ -177,9 +177,9 @@ body {
  */
 
 ::selection {
-  background: var(--ui-selection-bg);
-  color: var(--ui-selection-color);
-  text-shadow: var(--ui-selection-text-shadow);
+  background: var(--bux-selection-bg);
+  color: var(--bux-selection-color);
+  text-shadow: var(--bux-selection-text-shadow);
 }
 
 /* ----------------------------------------------------------------------------
@@ -196,7 +196,7 @@ body {
 
 @supports (-moz-appearance: none) {
   html {
-    scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track);
+    scrollbar-color: var(--bux-scrollbar-thumb) var(--bux-scrollbar-track);
     scrollbar-width: auto;
   }
 }
@@ -212,9 +212,9 @@ body {
  */
 
 ::-webkit-scrollbar {
-	background: var(--ui-scrollbar);
-	height: var(--ui-scrollbar-horizontal-height);
-	width: var(--ui-scrollbar-vertical-width);
+	background: var(--bux-scrollbar);
+	height: var(--bux-scrollbar-horizontal-height);
+	width: var(--bux-scrollbar-vertical-width);
 }
  
 /**
@@ -230,16 +230,16 @@ body {
  */
 
 ::-webkit-scrollbar-track {
-  background-color: var(--ui-scrollbar-track);
+  background-color: var(--bux-scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--ui-scrollbar-thumb);
-  border-radius: calc(var(--ui-scrollbar-vertical-width) / 2);
+	background-color: var(--bux-scrollbar-thumb);
+  border-radius: calc(var(--bux-scrollbar-vertical-width) / 2);
 }
 	
 ::-webkit-scrollbar-thumb:hover {
-	background-color: var(--ui-scrollbar-thumb-hover);
+	background-color: var(--bux-scrollbar-thumb-hover);
 }
 
 /**
@@ -260,7 +260,7 @@ body {
  */
 
 ::placeholder {
-  color: var(--ui-placeholder-color);
+  color: var(--bux-placeholder-color);
 }
 
 /**
@@ -272,11 +272,11 @@ input[type="radio"],
 input[type="range"],
 meter,
 select {
-  accent-color: var(--ui-color-primary);
+  accent-color: var(--bux-color-primary);
 }
 
 progress {
-  accent-color: var(--ui-progress-value-bg);
+  accent-color: var(--bux-progress-value-bg);
 }
 
 /**
@@ -285,7 +285,7 @@ progress {
 
 input[type="range"]::-webkit-slider-thumb,
 input[type="range"]::-moz-range-thumb {
-  background: var(--ui-color-primary);
+  background: var(--bux-color-primary);
   border: none;
 }
 
@@ -296,20 +296,20 @@ input[type="range"]::-moz-range-thumb {
 input:valid, 
 textarea:valid, 
 select:valid {
-  background-color: var(--ui-valid-bg-color);
-  border-color: var(--ui-valid-border-color); 
+  background-color: var(--bux-valid-bg-color);
+  border-color: var(--bux-valid-border-color); 
 }
 
 input:invalid, 
 textarea:invalid, 
 select:invalid {
-  background-color: var(--ui-invalid-bg-color);
-  border-color:  var(--ui-invalid-border-color);
+  background-color: var(--bux-invalid-bg-color);
+  border-color:  var(--bux-invalid-border-color);
 }
 
 input:invalid::placeholder, 
 textarea:invalid::placeholder {
-  color: var(--ui-invalid-placeholder-color);
+  color: var(--bux-invalid-placeholder-color);
 }
 
 /**
@@ -317,17 +317,17 @@ textarea:invalid::placeholder {
  */
 
 progress::-webkit-progress-bar {
-  background-color: var(--ui-progress-bar-bg);
+  background-color: var(--bux-progress-bar-bg);
   border-radius: 8px;
 }
 
 progress::-webkit-progress-value {
-  background-color: var(--ui-progress-value-bg);
+  background-color: var(--bux-progress-value-bg);
   border-radius: 8px;
 }
 
 progress::-moz-progress-bar {
-  background-color: var(--ui-progress-bar-bg);
+  background-color: var(--bux-progress-bar-bg);
 }
 
 /* ----------------------------------------------------------------------------
@@ -340,7 +340,7 @@ progress::-moz-progress-bar {
 
 details,
 summary {
-  accent-color: var(--ui-color-primary);
+  accent-color: var(--bux-color-primary);
 }
 
 /* ----------------------------------------------------------------------------
@@ -361,7 +361,7 @@ summary {
  */
 
 :focus-visible {
-  outline: 2px solid var(--ui-color-primary);
+  outline: 2px solid var(--bux-color-primary);
   outline-offset: 2px;
 }
 
@@ -438,7 +438,7 @@ html {
  */
 
 html {
-  font-family: var(--ui-typo-font-family); /* 1 */
+  font-family: var(--bux-typo-font-family); /* 1 */
   font-size: 62.5%; /* 2 */
   min-height: 100%; /* 3 */
   overflow-y: scroll; /* 4 */
@@ -463,10 +463,10 @@ html {
  */
  
 body {
-  background: var(--ui-page-bg); /* 1 */ 
-  color: var(--ui-page-color); /* 2 */ 
-  font-size: var(--ui-typo-font-size); /* 2 */
-  line-height: var(--ui-typo-line-height); /* 2 */
+  background: var(--bux-page-bg); /* 1 */ 
+  color: var(--bux-page-color); /* 2 */ 
+  font-size: var(--bux-typo-font-size); /* 2 */
+  line-height: var(--bux-typo-line-height); /* 2 */
   min-height: 100%; /* 3 */
 }
 
@@ -489,7 +489,7 @@ pre {
  */
  
 pre {
-  font-family: var(--ui-typo-font-family-mono);
+  font-family: var(--bux-typo-font-family-mono);
 }
 
 /**
@@ -558,7 +558,7 @@ code {
 code, 
 kbd, 
 samp {
-  font-family: var(--ui-typo-font-family-mono);
+  font-family: var(--bux-typo-font-family-mono);
 }
 
 /**
@@ -624,7 +624,7 @@ video {
  */
 
 img::selection {
-  background-color: var(--ui-transparent);
+  background-color: var(--bux-transparent);
 }
 
 /**

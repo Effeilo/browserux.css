@@ -1,7 +1,7 @@
 [EN](../en/CHANGELOG.md) | **FR**
 
 <div>
-  <img src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX"/>
+  <img class="has-dark" src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX"/>
 </div>
 
 # 📦 Changelog
@@ -10,6 +10,43 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)  
 et ce projet suit les recommandations de versionnage [SemVer](https://semver.org/lang/fr/).
+
+---
+
+<br>
+
+## [2.0.0] – 06-06-2025
+
+### 💥 Breaking change
+
+#### CSS variable prefix update:
+
+To improve project scalability and avoid naming collisions with other libraries or design systems, all CSS variables previously prefixed with `--ui-` have been renamed to `--bux-`.
+
+This change clarifies the scope of the BrowserUX design system (Bux) and prepares for better integration into multi-source projects.
+
+Example:
+
+```diff
+- --ui-color-primary
++ --bux-color-primary
+```
+
+####  Required action for users:
+
+- If you override CSS variables in your own stylesheets, rename them using the `--bux-` prefix
+- If you use a theme or token system based on `--ui-`, consider migrating it to `--bux-`
+
+**Tip** : You can temporarily add manual aliases to ensure a smooth transition:
+
+```css
+:root {
+  --ui-color-primary: var(--bux-color-primary);
+  --ui-spacing-small: var(--bux-spacing-small);
+}
+```
+
+<br>
 
 ---
 
@@ -142,8 +179,11 @@ video {
 
 ## 📊 Historique des versions
 
-- [Comparer `1.0.1` ↔ `1.0.2`](https://github.com/Effeilo/browserux.css/compare/1.0.1...HEAD)
-- [Voir `1.0.1`](https://github.com/Effeilo/browserux.css/releases/tag/1.0.1)
+- [browseruxcss v`2.0.0`](https://github.com/Effeilo/browserux.css/tree/v2.0.0)
+- [browseruxcss v`1.2.0`](https://github.com/Effeilo/browserux.css/tree/v1.2.0)
+- [browseruxcss v`1.1.0`](https://github.com/Effeilo/browserux.css/tree/v1.1.0)
+- [browseruxcss v`1.0.2`](https://github.com/Effeilo/browserux.css/tree/v1.0.2)
+- [browseruxcss v`1.0.1`](https://github.com/Effeilo/browserux.css/tree/v1.0.1)
 
 <br>
 

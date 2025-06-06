@@ -1,7 +1,7 @@
 **EN** | [FR](../fr/DOC.md)
 
 <div>
-  <img src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX"/>
+  <img class="has-dark" src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX"/>
 </div>
 
 # 📘 Documentation of `browserux.css`
@@ -176,11 +176,11 @@ Variables used as the base for the overall theme: background colors, text colors
 
 | Variable               | Role                                      | Default Value     |
 |------------------------|-------------------------------------------|-------------------|
-| `--ui-page-bg`         | Main background color                     | `#eaeaea`         |
-| `--ui-page-color`      | Main text color                           | `#121212`         |
-| `--ui-color-primary`   | Primary color (accent/CTA)                | `#f05e0e`         |
-| `--ui-color-secondary` | Secondary color (links, components)       | `#0e93f0`         |
-| `--ui-transparent`     | Universal transparent value               | `transparent`     |
+| `--bux-page-bg`         | Main background color                     | `#eaeaea`         |
+| `--bux-page-color`      | Main text color                           | `#121212`         |
+| `--bux-color-primary`   | Primary color (accent/CTA)                | `#f05e0e`         |
+| `--bux-color-secondary` | Secondary color (links, components)       | `#0e93f0`         |
+| `--bux-transparent`     | Universal transparent value               | `transparent`     |
 
 <br>
 
@@ -190,12 +190,12 @@ Defines the colors used for valid/invalid form fields, as well as their correspo
 
 | Variable                            | Usage                              | Default Value |
 |-------------------------------------|-------------------------------------|----------------|
-| `--ui-valid-border-color`           | Border of valid fields              | `#29b94c`      |
-| `--ui-valid-bg-color`               | Background of valid fields          | `#f0fff5`      |
-| `--ui-invalid-border-color`         | Border of invalid fields            | `#dc303e`      |
-| `--ui-invalid-bg-color`             | Background of invalid fields        | `#fff0f0`      |
-| `--ui-placeholder-color`            | Default placeholder color           | `#aaa`         |
-| `--ui-invalid-placeholder-color`    | Placeholder color for invalid state| `#dc303e`      |
+| `--bux-valid-border-color`           | Border of valid fields              | `#29b94c`      |
+| `--bux-valid-bg-color`               | Background of valid fields          | `#f0fff5`      |
+| `--bux-invalid-border-color`         | Border of invalid fields            | `#dc303e`      |
+| `--bux-invalid-bg-color`             | Background of invalid fields        | `#fff0f0`      |
+| `--bux-placeholder-color`            | Default placeholder color           | `#aaa`         |
+| `--bux-invalid-placeholder-color`    | Placeholder color for invalid state| `#dc303e`      |
 
 <br>
 
@@ -205,8 +205,8 @@ Customizes the native `<progress>` element to match the theme interface.
 
 | Variable                  | Description                          | Default Value |
 |---------------------------|--------------------------------------|----------------|
-| `--ui-progress-bar-bg`    | Background of the `<progress>` bar   | `#efefef`      |
-| `--ui-progress-value-bg`  | Filled portion inside `<progress>`   | `#29b94c`      |
+| `--bux-progress-bar-bg`    | Background of the `<progress>` bar   | `#efefef`      |
+| `--bux-progress-value-bg`  | Filled portion inside `<progress>`   | `#29b94c`      |
 
 <br>
 
@@ -216,9 +216,9 @@ Controls the appearance of text selected by the user.
 
 | Variable                        | Description                        | Default Value           |
 |---------------------------------|------------------------------------|--------------------------|
-| `--ui-selection-bg`             | Background color for selection     | `var(--ui-page-color)`   |
-| `--ui-selection-color`          | Text color for selection           | `var(--ui-page-bg)`      |
-| `--ui-selection-text-shadow`    | Text shadow on selected text       | `none`                   |
+| `--bux-selection-bg`             | Background color for selection     | `var(--bux-page-color)`   |
+| `--bux-selection-color`          | Text color for selection           | `var(--bux-page-bg)`      |
+| `--bux-selection-text-shadow`    | Text shadow on selected text       | `none`                   |
 
 <br>
 
@@ -228,12 +228,12 @@ Enables customization of scrollbars for better visual integration (supported in 
 
 | Variable                            | Role                                | Default Value               |
 |-------------------------------------|-------------------------------------|------------------------------|
-| `--ui-scrollbar`                    | Global scrollbar background color   | `var(--ui-page-bg)`         |
-| `--ui-scrollbar-track`              | Track color                         | `#ddecf6`                   |
-| `--ui-scrollbar-thumb`              | Thumb color                         | `var(--ui-color-secondary)` |
-| `--ui-scrollbar-thumb-hover`        | Thumb hover color                   | `var(--ui-color-primary)`   |
-| `--ui-scrollbar-vertical-width`     | Vertical scrollbar width            | `10px`                      |
-| `--ui-scrollbar-horizontal-height`  | Horizontal scrollbar height         | `10px`                      |
+| `--bux-scrollbar`                    | Global scrollbar background color   | `var(--bux-page-bg)`         |
+| `--bux-scrollbar-track`              | Track color                         | `#ddecf6`                   |
+| `--bux-scrollbar-thumb`              | Thumb color                         | `var(--bux-color-secondary)` |
+| `--bux-scrollbar-thumb-hover`        | Thumb hover color                   | `var(--bux-color-primary)`   |
+| `--bux-scrollbar-vertical-width`     | Vertical scrollbar width            | `10px`                      |
+| `--bux-scrollbar-horizontal-height`  | Horizontal scrollbar height         | `10px`                      |
 
 <br>
 
@@ -243,10 +243,10 @@ Base variables used to configure font, text size, and global line height.
 
 | Variable                     | Role                                 | Default Value       |
 |------------------------------|--------------------------------------|----------------------|
-| `--ui-typo-font-family`      | Main document font                   | System + fallback    |
-| `--ui-typo-font-family-mono` | Monospace font (for code, pre, etc.) | Standard monospace   |
-| `--ui-typo-font-size`        | Base size (`rem`)                    | `1.6rem`             |
-| `--ui-typo-line-height`      | Line height                          | `1.6`                |
+| `--bux-typo-font-family`      | Main document font                   | System + fallback    |
+| `--bux-typo-font-family-mono` | Monospace font (for code, pre, etc.) | Standard monospace   |
+| `--bux-typo-font-size`        | Base size (`rem`)                    | `1.6rem`             |
+| `--bux-typo-line-height`      | Line height                          | `1.6`                |
 
 ---
 
@@ -267,10 +267,10 @@ This section dynamically adjusts CSS variables to reflect that preference.
 @media (prefers-color-scheme: dark) {
   :root {
     /* Exemples : */
-    --ui-page-bg: #121212;
-    --ui-page-color: #eaeaea;
-    --ui-color-primary: #f05e0e;
-    --ui-color-secondary: #0e93f0;
+    --bux-page-bg: #121212;
+    --bux-page-color: #eaeaea;
+    --bux-color-primary: #f05e0e;
+    --bux-color-secondary: #0e93f0;
     /* etc. */
   }
 }
@@ -421,9 +421,9 @@ Customizes the appearance of text selected by the user (background, color, shado
 
 ```css
 ::selection {
-  background: var(--ui-selection-bg);
-  color: var(--ui-selection-color);
-  text-shadow: var(--ui-selection-text-shadow);
+  background: var(--bux-selection-bg);
+  color: var(--bux-selection-color);
+  text-shadow: var(--bux-selection-text-shadow);
 }
 ```
 > 🧩 Usability
@@ -440,7 +440,7 @@ Supports WebKit/Blink (Chrome, Safari, Edge Chromium) and Firefox (Gecko).
 ```css
 @supports (-moz-appearance: none) {
   html {
-    scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track);
+    scrollbar-color: var(--bux-scrollbar-thumb) var(--bux-scrollbar-track);
     scrollbar-width: auto;
   }
 }
@@ -450,17 +450,17 @@ Supports WebKit/Blink (Chrome, Safari, Edge Chromium) and Firefox (Gecko).
 
 ```css
 ::-webkit-scrollbar {
-  background: var(--ui-scrollbar);
-  height: var(--ui-scrollbar-horizontal-height);
-  width: var(--ui-scrollbar-vertical-width);
+  background: var(--bux-scrollbar);
+  height: var(--bux-scrollbar-horizontal-height);
+  width: var(--bux-scrollbar-vertical-width);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--ui-scrollbar-thumb);
+  background-color: var(--bux-scrollbar-thumb);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--ui-scrollbar-thumb-hover);
+  background-color: var(--bux-scrollbar-thumb-hover);
 }
 ```
 
@@ -495,7 +495,7 @@ Customizes the color of hint text in empty fields (`::placeholder`).
 
 ```css
 ::placeholder {
-  color: var(--ui-placeholder-color);
+  color: var(--bux-placeholder-color);
 }
 ```
 > 🧩 Usability
@@ -512,11 +512,11 @@ input[type="radio"],
 input[type="range"],
 meter,
 select {
-  accent-color: var(--ui-color-primary);
+  accent-color: var(--bux-color-primary);
 }
 
 progress {
-  accent-color: var(--ui-progress-value-bg);
+  accent-color: var(--bux-progress-value-bg);
 }
 ```
 > 🧩 Usability
@@ -530,7 +530,7 @@ Customizes the thumb (slider handle) of the `range` input component in WebKit an
 ```css
 input[type="range"]::-webkit-slider-thumb,
 input[type="range"]::-moz-range-thumb {
-  background: var(--ui-color-primary);
+  background: var(--bux-color-primary);
   border: none;
 }
 ```
@@ -546,20 +546,20 @@ Modifies the appearance of valid or invalid fields (border, background, placehol
 input:valid, 
 textarea:valid, 
 select:valid {
-  background-color: var(--ui-valid-bg-color);
-  border-color: var(--ui-valid-border-color); 
+  background-color: var(--bux-valid-bg-color);
+  border-color: var(--bux-valid-border-color); 
 }
 
 input:invalid, 
 textarea:invalid, 
 select:invalid {
-  background-color: var(--ui-invalid-bg-color);
-  border-color:  var(--ui-invalid-border-color);
+  background-color: var(--bux-invalid-bg-color);
+  border-color:  var(--bux-invalid-border-color);
 }
 
 input:invalid::placeholder, 
 textarea:invalid::placeholder {
-  color: var(--ui-invalid-placeholder-color);
+  color: var(--bux-invalid-placeholder-color);
 }
 ```
 > ♿ Accessibility and 🧩 Usability
@@ -572,17 +572,17 @@ Unifies the native appearance of progress bars in WebKit and Firefox.
 
 ```css
 progress::-webkit-progress-bar {
-  background-color: var(--ui-progress-bar-bg);
+  background-color: var(--bux-progress-bar-bg);
   border-radius: 8px;
 }
 
 progress::-webkit-progress-value {
-  background-color: var(--ui-progress-value-bg);
+  background-color: var(--bux-progress-value-bg);
   border-radius: 8px;
 }
 
 progress::-moz-progress-bar {
-  background-color: var(--ui-progress-bar-bg);
+  background-color: var(--bux-progress-bar-bg);
 }
 ```
 > 🧩 Usability
@@ -605,7 +605,7 @@ For consistent cross-browser styling, use `summary::marker` or a custom icon via
 ```css
 details,
 summary {
-  accent-color: var(--ui-color-primary);
+  accent-color: var(--bux-color-primary);
 }
 ```
 > 🧩 Usability
@@ -634,7 +634,7 @@ Displays a visible focus ring only during keyboard use, making accessible naviga
 
 ```css
 :focus-visible {
-  outline: 2px solid var(--ui-color-primary);
+  outline: 2px solid var(--bux-color-primary);
   outline-offset: 2px;
 }
 ```
@@ -716,7 +716,7 @@ It configures typography, minimum height, font rendering, scrolling, and mobile 
 
 ```css
 html {
-  font-family: var(--ui-typo-font-family);
+  font-family: var(--bux-typo-font-family);
   font-size: 62.5%;
   min-height: 100%;
   overflow-y: scroll;
@@ -737,7 +737,7 @@ html {
 Ensures uniform typography across browsers, instead of relying on the system default font which can vary between operating systems.
 
 ```css
-font-family: var(--ui-typo-font-family);
+font-family: var(--bux-typo-font-family);
 ```
 > ⚙️ Normalization
 
@@ -826,10 +826,10 @@ It sets up the visual base: background, text color, typography, and ensures a fu
 
 ```css
 body {
-  background: var(--ui-page-bg);
-  color: var(--ui-page-color);
-  font-size: var(--ui-typo-font-size);
-  line-height: var(--ui-typo-line-height);
+  background: var(--bux-page-bg);
+  color: var(--bux-page-color);
+  font-size: var(--bux-typo-font-size);
+  line-height: var(--bux-typo-line-height);
   min-height: 100%;
 }
 ```
@@ -841,8 +841,8 @@ body {
 Applies the theme’s primary colors (light/dark) as soon as the page loads.
 
 ```css
-background: var(--ui-page-bg);
-color: var(--ui-page-color);
+background: var(--bux-page-bg);
+color: var(--bux-page-color);
 ```
 > 🧩 Usability
 
@@ -854,7 +854,7 @@ Defines the base text size at the body level, which is then inherited by all chi
 Provides a consistent baseline across browsers using a CSS variable, instead of relying on inconsistent browser defaults.
 
 ```css
-font-size: var(--ui-typo-font-size);
+font-size: var(--bux-typo-font-size);
 ```
 > ⚙️ Normalization
 
@@ -863,7 +863,7 @@ font-size: var(--ui-typo-font-size);
 A good `line-height` ensures better reading comfort, especially for people with cognitive or visual impairments.
 
 ```css
-line-height: var(--ui-typo-line-height);
+line-height: var(--bux-typo-line-height);
 ```
 > ⚙️ Normalization and ♿ Accessibility
 
@@ -905,7 +905,7 @@ Applies a consistent set of monospace fonts across all browsers, useful for `pre
 
 ```css
 pre {
-  font-family: var(--ui-typo-font-family-mono);
+  font-family: var(--bux-typo-font-family-mono);
 }
 ```
 > ⚙️ Normalization
@@ -1034,7 +1034,7 @@ Ensures a readable and uniform display of code, regardless of browser or OS.
 code, 
 kbd, 
 samp {
-  font-family: var(--ui-typo-font-family-mono);
+  font-family: var(--bux-typo-font-family-mono);
 }
 ```
 > ⚙️ Normalization
@@ -1131,7 +1131,7 @@ Prevents unwanted visual effects, especially when accidentally dragging an image
 
 ```css
 img::selection {
-  background-color: var(--ui-transparent);
+  background-color: var(--bux-transparent);
 }
 ```
 > 🧩 Usability

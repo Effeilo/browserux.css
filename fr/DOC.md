@@ -1,7 +1,7 @@
 [EN](../en/DOC.md) | **FR**
 
 <div>
-  <img src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX"/>
+  <img class="has-dark" src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX"/>
 </div>
 
 # 📘 Documentation de `browserux.css`
@@ -178,11 +178,11 @@ Variables servant de base au thème général : couleurs de fond, de texte, et c
 
 | Variable               | Rôle                                     | Valeur par défaut |
 |------------------------|------------------------------------------|-------------------|
-| `--ui-page-bg`         | Couleur de fond principale               | `#eaeaea`         |
-| `--ui-page-color`      | Couleur du texte principal               | `#121212`         |
-| `--ui-color-primary`   | Couleur primaire (accent/CTA)            | `#f05e0e`         |
-| `--ui-color-secondary` | Couleur secondaire (lien, composant)     | `#0e93f0`         |
-| `--ui-transparent`     | Valeur transparente universelle          | `transparent`     |
+| `--bux-page-bg`         | Couleur de fond principale               | `#eaeaea`         |
+| `--bux-page-color`      | Couleur du texte principal               | `#121212`         |
+| `--bux-color-primary`   | Couleur primaire (accent/CTA)            | `#f05e0e`         |
+| `--bux-color-secondary` | Couleur secondaire (lien, composant)     | `#0e93f0`         |
+| `--bux-transparent`     | Valeur transparente universelle          | `transparent`     |
 
 <br>
 
@@ -192,12 +192,12 @@ Définit les couleurs utilisées pour les champs valides/invalides, ainsi que le
 
 | Variable                            | Utilisation                          | Valeur |
 |-------------------------------------|--------------------------------------|--------|
-| `--ui-valid-border-color`           | Bordure des champs valides           | `#29b94c` |
-| `--ui-valid-bg-color`               | Fond des champs valides              | `#f0fff5` |
-| `--ui-invalid-border-color`         | Bordure des champs invalides         | `#dc303e` |
-| `--ui-invalid-bg-color`             | Fond des champs invalides            | `#fff0f0` |
-| `--ui-placeholder-color`            | Couleur par défaut du placeholder    | `#aaa` |
-| `--ui-invalid-placeholder-color`    | Couleur du placeholder invalide      | `#dc303e` |
+| `--bux-valid-border-color`           | Bordure des champs valides           | `#29b94c` |
+| `--bux-valid-bg-color`               | Fond des champs valides              | `#f0fff5` |
+| `--bux-invalid-border-color`         | Bordure des champs invalides         | `#dc303e` |
+| `--bux-invalid-bg-color`             | Fond des champs invalides            | `#fff0f0` |
+| `--bux-placeholder-color`            | Couleur par défaut du placeholder    | `#aaa` |
+| `--bux-invalid-placeholder-color`    | Couleur du placeholder invalide      | `#dc303e` |
 
 <br>
 
@@ -207,8 +207,8 @@ Personnalise les styles de l’élément natif `<progress>` pour l’adapter à 
 
 | Variable                  | Description                      | Valeur |
 |---------------------------|----------------------------------|--------|
-| `--ui-progress-bar-bg`    | Fond de la barre `<progress>`    | `#efefef` |
-| `--ui-progress-value-bg`  | Valeur remplie dans `<progress>` | `#29b94c` |
+| `--bux-progress-bar-bg`    | Fond de la barre `<progress>`    | `#efefef` |
+| `--bux-progress-value-bg`  | Valeur remplie dans `<progress>` | `#29b94c` |
 
 <br>
 
@@ -218,9 +218,9 @@ Contrôle l’apparence de la sélection de texte effectuée par l’utilisateur
 
 | Variable                        | Description                      | Valeur                       |
 |---------------------------------|----------------------------------|------------------------------|
-| `--ui-selection-bg`             | Couleur de fond sélectionné      | `var(--ui-page-color)`       |
-| `--ui-selection-color`          | Couleur du texte sélectionné     | `var(--ui-page-bg)`          |
-| `--ui-selection-text-shadow`    | Ombre sur texte sélectionné      | `none`                       |
+| `--bux-selection-bg`             | Couleur de fond sélectionné      | `var(--bux-page-color)`       |
+| `--bux-selection-color`          | Couleur du texte sélectionné     | `var(--bux-page-bg)`          |
+| `--bux-selection-text-shadow`    | Ombre sur texte sélectionné      | `none`                       |
 
 <br>
 
@@ -230,12 +230,12 @@ Permet de personnaliser les scrollbars pour une meilleure intégration visuelle 
 
 | Variable                            | Rôle                                 | Valeur par défaut |
 |-------------------------------------|--------------------------------------|-------------------|
-| `--ui-scrollbar`                    | Couleur de fond globale de la scrollbar | `var(--ui-page-bg)` |
-| `--ui-scrollbar-track`              | Couleur du rail                      | `#ddecf6`         |
-| `--ui-scrollbar-thumb`              | Couleur du curseur (thumb)           | `var(--ui-color-secondary)` |
-| `--ui-scrollbar-thumb-hover`        | Couleur du curseur au survol         | `var(--ui-color-primary)` |
-| `--ui-scrollbar-vertical-width`     | Largeur de la scrollbar verticale    | `10px`            |
-| `--ui-scrollbar-horizontal-height`  | Hauteur de la scrollbar horizontale  | `10px`            |
+| `--bux-scrollbar`                    | Couleur de fond globale de la scrollbar | `var(--bux-page-bg)` |
+| `--bux-scrollbar-track`              | Couleur du rail                      | `#ddecf6`         |
+| `--bux-scrollbar-thumb`              | Couleur du curseur (thumb)           | `var(--bux-color-secondary)` |
+| `--bux-scrollbar-thumb-hover`        | Couleur du curseur au survol         | `var(--bux-color-primary)` |
+| `--bux-scrollbar-vertical-width`     | Largeur de la scrollbar verticale    | `10px`            |
+| `--bux-scrollbar-horizontal-height`  | Hauteur de la scrollbar horizontale  | `10px`            |
 
 <br>
 
@@ -245,10 +245,10 @@ Variables de base utilisées pour configurer la police, la taille de texte et l�
 
 | Variable                    | Rôle                                 | Valeur par défaut |
 |-----------------------------|--------------------------------------|-------------------|
-| `--ui-typo-font-family`     | Police principale du document        | Système + fallback |
-| `--ui-typo-font-family-mono`| Police monospace (code, pre…)        | Monospace standard |
-| `--ui-typo-font-size`       | Taille de base (`rem`)               | `1.6rem`          |
-| `--ui-typo-line-height`     | Interligne                           | `1.6`             |
+| `--bux-typo-font-family`     | Police principale du document        | Système + fallback |
+| `--bux-typo-font-family-mono`| Police monospace (code, pre…)        | Monospace standard |
+| `--bux-typo-font-size`       | Taille de base (`rem`)               | `1.6rem`          |
+| `--bux-typo-line-height`     | Interligne                           | `1.6`             |
 
 ---
 
@@ -269,10 +269,10 @@ Cette section ajuste dynamiquement les variables CSS pour refléter cette préf�
 @media (prefers-color-scheme: dark) {
   :root {
     /* Exemples : */
-    --ui-page-bg: #121212;
-    --ui-page-color: #eaeaea;
-    --ui-color-primary: #f05e0e;
-    --ui-color-secondary: #0e93f0;
+    --bux-page-bg: #121212;
+    --bux-page-color: #eaeaea;
+    --bux-color-primary: #f05e0e;
+    --bux-color-secondary: #0e93f0;
     /* etc. */
   }
 }
@@ -422,9 +422,9 @@ Personnalise l’apparence du texte sélectionné par l’utilisateur (fond, cou
 
 ```css
 ::selection {
-  background: var(--ui-selection-bg);
-  color: var(--ui-selection-color);
-  text-shadow: var(--ui-selection-text-shadow);
+  background: var(--bux-selection-bg);
+  color: var(--bux-selection-color);
+  text-shadow: var(--bux-selection-text-shadow);
 }
 ```
 > 🧩 Ergonomie
@@ -441,7 +441,7 @@ Prend en charge WebKit/Blink (Chrome, Safari, Edge Chromium) et Firefox (Gecko).
 ```css
 @supports (-moz-appearance: none) {
   html {
-    scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track);
+    scrollbar-color: var(--bux-scrollbar-thumb) var(--bux-scrollbar-track);
     scrollbar-width: auto;
   }
 }
@@ -451,17 +451,17 @@ Prend en charge WebKit/Blink (Chrome, Safari, Edge Chromium) et Firefox (Gecko).
 
 ```css
 ::-webkit-scrollbar {
-  background: var(--ui-scrollbar);
-  height: var(--ui-scrollbar-horizontal-height);
-  width: var(--ui-scrollbar-vertical-width);
+  background: var(--bux-scrollbar);
+  height: var(--bux-scrollbar-horizontal-height);
+  width: var(--bux-scrollbar-vertical-width);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--ui-scrollbar-thumb);
+  background-color: var(--bux-scrollbar-thumb);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--ui-scrollbar-thumb-hover);
+  background-color: var(--bux-scrollbar-thumb-hover);
 }
 ```
 
@@ -496,7 +496,7 @@ Personnalise la couleur du texte d’indice dans les champs vides (`::placeholde
 
 ```css
 ::placeholder {
-  color: var(--ui-placeholder-color);
+  color: var(--bux-placeholder-color);
 }
 ```
 > 🧩 Ergonomie
@@ -513,11 +513,11 @@ input[type="radio"],
 input[type="range"],
 meter,
 select {
-  accent-color: var(--ui-color-primary);
+  accent-color: var(--bux-color-primary);
 }
 
 progress {
-  accent-color: var(--ui-progress-value-bg);
+  accent-color: var(--bux-progress-value-bg);
 }
 ```
 > 🧩 Ergonomie
@@ -531,7 +531,7 @@ Personnalise le bouton de glissement du composant `range` dans WebKit et Firefox
 ```css
 input[type="range"]::-webkit-slider-thumb,
 input[type="range"]::-moz-range-thumb {
-  background: var(--ui-color-primary);
+  background: var(--bux-color-primary);
   border: none;
 }
 ```
@@ -547,20 +547,20 @@ Modifie l’apparence des champs valides ou invalides (bordure, fond, placeholde
 input:valid, 
 textarea:valid, 
 select:valid {
-  background-color: var(--ui-valid-bg-color);
-  border-color: var(--ui-valid-border-color); 
+  background-color: var(--bux-valid-bg-color);
+  border-color: var(--bux-valid-border-color); 
 }
 
 input:invalid, 
 textarea:invalid, 
 select:invalid {
-  background-color: var(--ui-invalid-bg-color);
-  border-color:  var(--ui-invalid-border-color);
+  background-color: var(--bux-invalid-bg-color);
+  border-color:  var(--bux-invalid-border-color);
 }
 
 input:invalid::placeholder, 
 textarea:invalid::placeholder {
-  color: var(--ui-invalid-placeholder-color);
+  color: var(--bux-invalid-placeholder-color);
 }
 ```
 > ♿ Accessibilité et 🧩 Ergonomie
@@ -573,17 +573,17 @@ Harmonise l’apparence native des barres de progression dans WebKit et Firefox.
 
 ```css
 progress::-webkit-progress-bar {
-  background-color: var(--ui-progress-bar-bg);
+  background-color: var(--bux-progress-bar-bg);
   border-radius: 8px;
 }
 
 progress::-webkit-progress-value {
-  background-color: var(--ui-progress-value-bg);
+  background-color: var(--bux-progress-value-bg);
   border-radius: 8px;
 }
 
 progress::-moz-progress-bar {
-  background-color: var(--ui-progress-bar-bg);
+  background-color: var(--bux-progress-bar-bg);
 }
 ```
 > 🧩 Ergonomie
@@ -604,7 +604,7 @@ Applique la couleur principale définie dans le thème sur les flèches et marqu
 ```css
 details,
 summary {
-  accent-color: var(--ui-color-primary);
+  accent-color: var(--bux-color-primary);
 }
 ```
 > 🧩 Ergonomie
@@ -632,7 +632,7 @@ Affiche un contour visible uniquement lors de l’usage du clavier, pour facilit
 
 ```css
 :focus-visible {
-  outline: 2px solid var(--ui-color-primary);
+  outline: 2px solid var(--bux-color-primary);
   outline-offset: 2px;
 }
 ```
@@ -713,7 +713,7 @@ Cette section configure le comportement global du document HTML à partir de l�
 
 ```css
 html {
-  font-family: var(--ui-typo-font-family);
+  font-family: var(--bux-typo-font-family);
   font-size: 62.5%;
   min-height: 100%;
   overflow-y: scroll;
@@ -734,7 +734,7 @@ html {
 Assure une typographie homogène entre navigateurs (plutôt que laisser la police système par défaut, variable d’un OS à l’autre).
 
 ```css
-font-family: var(--ui-typo-font-family);
+font-family: var(--bux-typo-font-family);
 ```
 > ⚙️ Normalisation
 
@@ -819,10 +819,10 @@ Elle pose les bases visuelles : fond, couleur du texte, typographie, et garantit
 
 ```css
 body {
-  background: var(--ui-page-bg);
-  color: var(--ui-page-color);
-  font-size: var(--ui-typo-font-size);
-  line-height: var(--ui-typo-line-height);
+  background: var(--bux-page-bg);
+  color: var(--bux-page-color);
+  font-size: var(--bux-typo-font-size);
+  line-height: var(--bux-typo-line-height);
   min-height: 100%;
 }
 ```
@@ -834,8 +834,8 @@ body {
 Applique les couleurs principales du thème (claire/sombre), dès le chargement de la page.
 
 ```css
-background: var(--ui-page-bg);
-color: var(--ui-page-color);
+background: var(--bux-page-bg);
+color: var(--bux-page-color);
 ```
 > 🧩 Ergonomie
 
@@ -846,7 +846,7 @@ color: var(--ui-page-color);
 Définit la taille de base du texte à l’échelle du body, héritée ensuite par tous les éléments enfants. Fournit une base cohérente dans tous les navigateurs via une variable CSS plutôt que laisser la taille par défaut (souvent incohérente d’un navigateur à l’autre).
 
 ```css
-font-size: var(--ui-typo-font-size);
+font-size: var(--bux-typo-font-size);
 ```
 > ⚙️ Normalisation
 
@@ -855,7 +855,7 @@ font-size: var(--ui-typo-font-size);
 Un bon `line-height` garantit un meilleur confort de lecture, notamment pour les personnes avec troubles cognitifs ou visuels.
 
 ```css
-line-height: var(--ui-typo-line-height);
+line-height: var(--bux-typo-line-height);
 ```
 > ⚙️ Normalisation et ♿ Accessibilité
 
@@ -897,7 +897,7 @@ Applique une série de polices monospace cohérente pour tous les navigateurs, u
 
 ```css
 pre {
-  font-family: var(--ui-typo-font-family-mono);
+  font-family: var(--bux-typo-font-family-mono);
 }
 ```
 > ⚙️ Normalisation
@@ -1024,7 +1024,7 @@ Applique une police monospace uniforme pour tous les blocs de code, saisie clavi
 code, 
 kbd, 
 samp {
-  font-family: var(--ui-typo-font-family-mono);
+  font-family: var(--bux-typo-font-family-mono);
 }
 ```
 > ⚙️ Normalisation
@@ -1118,7 +1118,7 @@ Supprime l’effet de surbrillance (souvent violet/bleu) lors de la sélection d
 
 ```css
 img::selection {
-  background-color: var(--ui-transparent);
+  background-color: var(--bux-transparent);
 }
 ```
 > 🧩 Ergonomie
