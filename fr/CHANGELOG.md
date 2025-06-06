@@ -17,27 +17,27 @@ et ce projet suit les recommandations de versionnage [SemVer](https://semver.org
 
 ## [2.0.0] – 06-06-2025
 
-### 💥 Breaking change
+### 💥 Rupture
 
-#### CSS variable prefix update:
+#### Changement de préfixe des variables CSS :
 
-To improve project scalability and avoid naming collisions with other libraries or design systems, all CSS variables previously prefixed with `--ui-` have been renamed to `--bux-`.
+Afin d'améliorer la scalabilité du projet et d'éviter les collisions de noms avec d'autres bibliothèques ou systèmes de design, toutes les variables CSS précédemment préfixées par `--ui-` ont été renommées en `--bux-`.
 
-This change clarifies the scope of the BrowserUX design system (Bux) and prepares for better integration into multi-source projects.
+Ce changement clarifie la portée du design system BrowserUX (Bux) et prépare le terrain pour une meilleure intégration dans des projets multi-sources.
 
-Example:
+Exemple :
 
 ```diff
 - --ui-color-primary
 + --bux-color-primary
 ```
 
-####  Required action for users:
+####  Action requise pour les utilisateurs :
 
-- If you override CSS variables in your own stylesheets, rename them using the `--bux-` prefix
-- If you use a theme or token system based on `--ui-`, consider migrating it to `--bux-`
+- Si vous surchargez des variables CSS dans vos propres feuilles de style, renommez-les avec le préfixe `--bux-`
+- Si vous utilisez un thème ou un système de tokens personnalisé basé sur `--ui-`, pensez à le migrer vers `--bux-`
 
-**Tip** : You can temporarily add manual aliases to ensure a smooth transition:
+**Astuce** : Vous pouvez temporairement ajouter des alias manuels pour garantir une compatibilité douce :
 
 ```css
 :root {
