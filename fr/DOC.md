@@ -1,7 +1,7 @@
 [EN](../en/DOC.md) | **FR**
 
 <div>
-  <img class="has-dark" src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX"/>
+  <img class="has-dark" src="https://browserux.com/assets/img/logo/logo-browserux-css-250.png" alt="logo Browser UX"/>
 </div>
 
 # 📘 Documentation de `browserux.css`

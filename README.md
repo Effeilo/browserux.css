@@ -1,7 +1,7 @@
 **EN** | [FR](./fr/README.md)
 
 <div>
-  <img src="https://browserux.com/assets/images/browser-ui-logo-150x150.png" alt="logo Browser UX v2.0.0"/>
+  <img src="https://browserux.com/assets/img/logo/logo-browserux-css-250.png" alt="logo Browser UX v2.0.0"/>
 </div>
 
 # `browserux.css`
